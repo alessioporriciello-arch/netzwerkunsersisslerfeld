@@ -63,14 +63,12 @@ nav.scrolled{box-shadow:0 4px 30px rgba(0,0,0,0.08);}
 }
 .nav-links li a:hover,.nav-links li a.active{color:var(--blue);background:rgba(0, 0, 0, 0.05);}
 
-/* Hamburger menu color updated to dark */
 .hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px;}
 .hamburger span{display:block;width:24px;height:2px;background:var(--dark);transition:all .3s;}
 .hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
 .hamburger.open span:nth-child(2){opacity:0;}
 .hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
 
-/* Mobile menu updated to white */
 .mobile-menu{
   display:none;position:fixed;top:64px;left:0;right:0;
   background:rgba(255, 255, 255, 0.98);z-index:999;
@@ -129,7 +127,7 @@ nav.scrolled{box-shadow:0 4px 30px rgba(0,0,0,0.08);}
 }
 .img-ph:hover::before{left:160%;}
 
-/* ── HERO WITH LIGHTER DARK BLUE OVERLAY ── */
+/* ── HERO ── */
 .hero{
   min-height:calc(100vh - 64px);
   background: linear-gradient(180deg, rgba(1, 15, 30, 0.65) 0%, rgba(0, 5, 15, 0.8) 100%), 
@@ -221,23 +219,43 @@ section{padding:5.5rem 2rem;}
 .two{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start;}
 .three{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;}
 
-/* ── STAT STRIP ── */
-.stat-strip{background:var(--bg);padding:3.5rem 2rem;}
-.stat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2rem;text-align:center;}
-.stat-num{
-  font-family:var(--font-d);font-size:3rem;font-weight:900;
-  color:var(--navy);line-height:1;
-  display:inline-block;
+/* ── HOME: Combined Teaser + Features side by side ── */
+.home-combined{
+  padding:6rem 2rem;
+  background:var(--white);
 }
-.stat-label{font-size:.82rem;color:#777;margin-top:.4rem;}
-.counter{display:inline-block;}
+.home-combined-grid{
+  max-width:1100px;
+  margin:0 auto;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:5rem;
+  align-items:center;
+}
+.home-teaser-left{}
+.home-teaser-left p{color:#555;line-height:1.9;font-size:1rem;margin-bottom:2rem;}
 
-/* ── HOME TEASER ── */
-.teaser-section{padding:6rem 2rem;}
-.teaser-inner{max-width:700px;margin:0 auto;text-align:center;}
-.teaser-inner p{color:#555;line-height:1.9;font-size:1rem;margin-bottom:2rem;}
+.home-features-right{
+  display:flex;
+  flex-direction:column;
+  gap:1.8rem;
+}
+.home-feature-item{
+  display:flex;
+  align-items:flex-start;
+  gap:1.2rem;
+}
+.home-feature-icon{
+  width:46px;height:46px;
+  background:rgba(18,142,214,.1);
+  border-radius:10px;
+  display:flex;align-items:center;justify-content:center;
+  font-size:1.3rem;flex-shrink:0;
+}
+.home-feature-text h4{font-weight:700;color:var(--navy);margin-bottom:.3rem;font-size:.95rem;}
+.home-feature-text p{font-size:.86rem;color:#666;line-height:1.65;}
 
-/* ── SISSLERFELD-TAG WITH LIGHTER DEEP BLUE HERO ── */
+/* ── SISSLERFELD-TAG HERO ── */
 .st-hero{
   background: linear-gradient(180deg, rgba(1, 15, 30, 0.65) 0%, rgba(0, 5, 15, 0.8) 100%), 
               url('img/zeltt.jpg') no-repeat center center;
@@ -286,88 +304,82 @@ section{padding:5.5rem 2rem;}
 .flyer-date-overlay .fd-big{font-family:var(--font-d);font-size:2rem;font-weight:900;color:var(--white);}
 .flyer-date-overlay .fd-sub{font-size:.8rem;color:rgba(255,255,255,.7);letter-spacing:.08em;}
 
-/* Program */
+/* ── PROGRAM SECTIONS ── */
+.prog-section-label{
+  font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;font-weight:700;
+  padding:.35rem 1rem;border-radius:20px;display:inline-block;margin-bottom:1rem;
+}
+.prog-section-label.wanderung{
+  background:rgba(18,142,214,.12);color:var(--blue);border:1px solid rgba(18,142,214,.25);
+}
+.prog-section-label.rahmen{
+  background:rgba(2,63,82,.1);color:var(--navy);border:1px solid rgba(2,63,82,.15);
+}
+.prog-section-title{
+  font-family:var(--font-d);font-size:1rem;font-weight:700;
+  margin-bottom:1.2rem;padding-bottom:.6rem;
+  border-bottom:2px solid;display:flex;align-items:center;gap:.5rem;
+}
+.prog-section-title.wanderung{color:var(--blue);border-color:rgba(18,142,214,.25);}
+.prog-section-title.rahmen{color:var(--navy);border-color:rgba(2,63,82,.12);}
+
+.prog-block{
+  margin-bottom:2rem;
+  padding:1.4rem;
+  border-radius:10px;
+}
+.prog-block.wanderung-block{
+  background:rgba(18,142,214,.05);
+  border:1px solid rgba(18,142,214,.15);
+}
+.prog-block.rahmen-block{
+  background:rgba(2,63,82,.03);
+  border:1px solid rgba(2,63,82,.08);
+}
+
 .prog-wrap{padding-top:.5rem;}
 .prog-item{
   display:flex;gap:1.4rem;align-items:flex-start;
-  padding:1.3rem 0;border-bottom:1px solid rgba(2,63,82,.07);
+  padding:1rem 0;border-bottom:1px solid rgba(2,63,82,.07);
   transition:background .2s;
 }
 .prog-item:last-child{border-bottom:none;}
 .prog-time{
-  font-family:var(--font-d);font-size:1.25rem;font-weight:700;
+  font-family:var(--font-d);font-size:1.1rem;font-weight:700;
   color:var(--navy);min-width:86px;padding-top:1px;
   flex-shrink:0;
 }
+.prog-time.blue-time{color:var(--blue);}
 .prog-dot-wrap{display:flex;flex-direction:column;align-items:center;gap:4px;padding-top:5px;}
 .prog-dot{width:10px;height:10px;border-radius:50%;background:var(--blue);flex-shrink:0;}
+.prog-dot.navy-dot{background:var(--navy);}
 .prog-line{width:2px;flex:1;background:rgba(18,142,214,.2);}
 .prog-content{}
-.prog-event{font-weight:700;font-size:1rem;color:var(--dark);}
-.prog-sub{font-size:.85rem;color:#777;margin-top:.25rem;}
+.prog-event{font-weight:700;font-size:.95rem;color:var(--dark);}
+.prog-sub{font-size:.82rem;color:#777;margin-top:.2rem;}
+.prog-link{
+  display:inline-flex;align-items:center;gap:.3rem;
+  font-size:.78rem;font-weight:600;color:var(--blue);
+  text-decoration:none;margin-top:.3rem;
+  transition:color .2s;
+}
+.prog-link:hover{color:var(--navy);}
 
-/* Rundweg */
-.rundweg{background:var(--bg);}
-.company-grid-graphic{
-  display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));
-  gap:1.5rem;margin-top:2.5rem;
+/* Rundweg Coming Soon */
+.coming-soon-box{
+  margin-top:2.5rem;
+  background:var(--white);
+  border:2px dashed rgba(18,142,214,.3);
+  border-radius:12px;
+  padding:3.5rem 2rem;
+  text-align:center;
 }
-.co-card-graphic{
-  background:var(--white);border-radius:12px;
-  border-left:5px solid var(--blue);
-  box-shadow:0 4px 20px rgba(2,63,82,0.06);
-  padding:1.8rem 1.5rem;
-  display:flex;flex-direction:column;justify-content:space-between;
-  transition:transform .3s cubic-bezier(.22,1,.36,1),box-shadow .3s,border-color .3s;
-  position:relative;overflow:hidden;
+.coming-soon-box .cs-icon{font-size:2.5rem;margin-bottom:1rem;}
+.coming-soon-box h3{
+  font-family:var(--font-d);font-size:1.5rem;color:var(--navy);margin-bottom:.6rem;
 }
-.co-card-graphic:hover{
-  transform:translateY(-5px);
-  box-shadow:0 12px 30px rgba(2,63,82,0.12);
-  border-left-color:var(--red);
-}
-.co-card-header{
-  display:flex;align-items:center;gap:1rem;margin-bottom:1rem;
-}
-.co-graphic-icon {
-  width:46px;height:46px;border-radius:10px;
-  background:rgba(18,142,214,0.1);color:var(--blue);
-  display:flex;align-items:center;justify-content:center;font-size:1.5rem;flex-shrink:0;
-  transition:background .2s,color .2s;
-}
-.co-card-graphic:hover .co-graphic-icon {
-  background:rgba(237,28,36,0.1);color:var(--red);
-}
-
-/* Unique Brand Logo Container for Rundweg Stations who are also sponsors */
-.co-logo-container {
-  width: 46px;
-  height: 46px;
-  border-radius: 10px;
-  background: #ffffff;
-  border: 1px solid #e2e8f0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-  overflow: hidden;
-  padding: 3px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-}
-.co-logo-img-rundweg {
-  max-width: 100%;
-  max-height: 100%;
-  object-fit: contain;
-}
-
-.co-title-wrap h3{font-size:1.1rem;font-weight:700;color:var(--navy);line-height:1.2;}
-.co-desc{font-size:.88rem;color:#555;line-height:1.65;margin-bottom:1.2rem;}
-.co-footer-meta{
-  display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:.5rem;
-  border-top:1px dashed rgba(2,63,82,0.08);padding-top:1rem;
-}
-.co-station-num{
-  font-size:.72rem;color:#888;font-weight:700;letter-spacing:.05em;text-transform:uppercase;
+.coming-soon-box p{
+  color:#777;font-size:.9rem;line-height:1.7;max-width:400px;margin:0 auto;
 }
 
 /* OK */
@@ -412,7 +424,7 @@ section{padding:5.5rem 2rem;}
   color:var(--white);font-weight:600;font-size:1rem;line-height:1.2;
 }
 
-/* Sponsors Graphical Tiers */
+/* Sponsors */
 .sponsors{padding:5.5rem 2rem;background:#f8fafc;}
 .sponsor-tier {
   margin-bottom:4rem;padding-bottom:1.5rem;
@@ -452,7 +464,6 @@ section{padding:5.5rem 2rem;}
 .sp-silber-card { width:180px;min-height:110px;border-top:3px solid var(--silber-border); }
 .sp-bronze-card { width:180px;min-height:110px;border-top:3px solid var(--bronze-border); }
 
-/* Unified Logo Layout for Sponsors */
 .sp-logo-container {
   width: 100%;
   height: 60px;
@@ -473,7 +484,7 @@ section{padding:5.5rem 2rem;}
 
 .sp-name { font-size:.9rem;font-weight:700;color:var(--navy);line-height:1.2; }
 
-/* ── ÜBER UNS WITH LIGHTER DEEP BLUE BACKGROUND OVERLAY ── */
+/* ── ÜBER UNS ── */
 .uu-hero{
   min-height:50vh;
   background: linear-gradient(180deg, rgba(1, 15, 30, 0.65) 0%, rgba(0, 5, 15, 0.8) 100%), 
@@ -548,9 +559,9 @@ section{padding:5.5rem 2rem;}
 }
 .tl-image-box:hover img { transform:scale(1.05); }
 
-/* Zweck boxes */
+/* Zweck boxes — three in a row */
 .zweck-section{background:var(--navy);padding:5rem 2rem;}
-.zweck-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:1.5rem;margin-top:2.5rem;}
+.zweck-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:2.5rem;}
 .zweck-box{
   background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);
   border-radius:10px;padding:2rem;transition:background .25s,transform .25s;
@@ -560,7 +571,7 @@ section{padding:5.5rem 2rem;}
 .zweck-box h4{color:var(--white);font-size:1rem;font-weight:700;margin-bottom:.5rem;}
 .zweck-box p{color:rgba(255,255,255,.6);font-size:.86rem;line-height:1.7;}
 
-/* Gemeinden (linked chips) */
+/* Gemeinden */
 .gemeinden{padding:5rem 2rem;background:var(--bg);}
 .gem-grid{display:flex;flex-wrap:wrap;gap:1rem;margin-top:2rem;justify-content:center;}
 .gem-chip{
@@ -574,7 +585,7 @@ section{padding:5.5rem 2rem;}
 .gem-chip svg { transition:transform .2s; }
 .gem-chip:hover svg { transform:translateY(-2px) translateX(2px); }
 
-/* ── PROJEKTE WITH EXPLICITLY CENTERED BACKGROUND ALIGNMENT (CENTER CENTER) & LIGHTER DEEP BLUE OVERLAY ── */
+/* ── PROJEKTE ── */
 .proj-hero{
   background: linear-gradient(180deg, rgba(1, 15, 30, 0.65) 0%, rgba(0, 5, 15, 0.8) 100%), 
               url('img/projekte.jpg') no-repeat center center;
@@ -616,7 +627,7 @@ section{padding:5.5rem 2rem;}
 .badge-plan{background:#fef5e0;color:#9a6800;}
 .badge-progress{background:#edf4ff;color:#1a5db8;}
 
-/* ── MITGLIED WITH LIGHTER DEEP BLUE OVERLAY ── */
+/* ── MITGLIED ── */
 .member-hero{
   background: linear-gradient(180deg, rgba(1, 15, 30, 0.65) 0%, rgba(0, 5, 15, 0.8) 100%), 
               url('img/sitzung.jpg') no-repeat center center;
@@ -659,7 +670,7 @@ section{padding:5.5rem 2rem;}
 }
 .fg textarea{resize:vertical;min-height:90px;}
 
-/* Custom OK Box Checkbox */
+/* Checkbox card */
 .checkbox-card {
   background: var(--white);
   border: 1.5px solid #ccd5db;
@@ -753,30 +764,35 @@ section{padding:5.5rem 2rem;}
 }
 .k-form h3{font-family:var(--font-d);font-size:1.4rem;color:var(--navy);margin-bottom:1.8rem;}
 
-/* ── FOOTER ── */
+/* ── FOOTER (TRUE BLACK) ── */
 footer{
-  background:var(--dark);color:rgba(255,255,255,.45);
+  background:#000000;color:rgba(255,255,255,.5);
   padding:3.5rem 2rem 2rem;text-align:center;font-size:.82rem;
 }
 .ft-top{display:flex;justify-content:center;gap:1.2rem;margin-bottom:1.8rem;}
 .ft-soc{
   width:38px;height:38px;border-radius:50%;
-  background:rgba(255,255,255,.07);
+  background:rgba(255,255,255,.1);
   display:flex;align-items:center;justify-content:center;
-  color:rgba(255,255,255,.5);text-decoration:none;font-size:.9rem;
+  color:rgba(255,255,255,.7);text-decoration:none;font-size:.9rem;
   transition:background .2s,color .2s;
 }
-.ft-soc svg {
-  display: block;
-}
+.ft-soc svg { display: block; }
 .ft-soc:hover{background:var(--blue);color:var(--white);}
-footer strong{color:rgba(255,255,255,.8);}
+footer strong{color:rgba(255,255,255,.9);}
 footer a{color:var(--lightblue);text-decoration:none;}
+footer p{color:rgba(255,255,255,.5);}
+
+/* Footer social logos with color */
+.ft-fb-icon { color: #1877f2; }
+.ft-ig-icon { color: #e1306c; }
+.ft-soc:hover .ft-fb-icon,
+.ft-soc:hover .ft-ig-icon { color: var(--white); }
 
 /* ── RESPONSIVE ── */
 @media(max-width:900px){
-  .three{grid-template-columns:1fr 1fr;}
-  .stat-grid{grid-template-columns:repeat(2,1fr);}
+  .three,.zweck-grid{grid-template-columns:1fr 1fr;}
+  .home-combined-grid{grid-template-columns:1fr;gap:3rem;}
   .founding-grid{grid-template-columns:1fr;gap:2.5rem;}
 }
 @media(max-width:768px){
@@ -784,11 +800,11 @@ footer a{color:var(--lightblue);text-decoration:none;}
   .hamburger{display:flex;}
   .mobile-menu{display:flex;}
   .two,.k-grid{grid-template-columns:1fr;gap:2.5rem;}
-  .three{grid-template-columns:1fr;}
+  .three,.zweck-grid{grid-template-columns:1fr;}
   .form-row{grid-template-columns:1fr;}
   .hero-date-badge{right:1rem;bottom:1rem;}
   section{padding:3.5rem 1.2rem;}
-  .stat-grid{grid-template-columns:repeat(2,1fr);}
+  .home-combined{padding:3.5rem 1.2rem;}
 }
 </style>
 </head>
@@ -844,65 +860,46 @@ footer a{color:var(--lightblue);text-decoration:none;}
     <div class="scroll-line"></div>
   </div>
 
-  <!-- Stats -->
-  <div class="stat-strip">
-    <div class="container">
-      <div class="stat-grid">
-        <div data-anim>
-          <div class="stat-num"><span class="counter" data-to="4">0</span>.</div>
-          <div class="stat-label">Sisslerfeld-Tag</div>
+  <!-- Combined Teaser + Features side by side -->
+  <div class="home-combined">
+    <div class="home-combined-grid">
+
+      <!-- Left: Event teaser -->
+      <div data-anim="left">
+        <p class="sec-label">12. September 2026</p>
+        <h2 class="sec-title">Der 4. Sisslerfeld-Tag in Münchwilen</h2>
+        <div class="rule"></div>
+        <p>Erstmals werden lokale Unternehmen aktiv einbezogen und öffnen ihre Tore. Ein Kultur- und Familienfest, das die Gemeinschaft im Sisslerfeld zusammenbringt – mit Musik, Programm, Begegnungen und einem einzigartigen Rundweg.</p>
+        <button class="btn btn-navy" style="margin-top:1.8rem;" onclick="showPage('st')">Mehr erfahren →</button>
+      </div>
+
+      <!-- Right: Features -->
+      <div class="home-features-right" data-anim="right">
+        <div class="home-feature-item" data-anim data-delay="1">
+          <div class="home-feature-icon">🎉</div>
+          <div class="home-feature-text">
+            <h4>Anlässe</h4>
+            <p>Abwechslungsweise in den Sisslerfeld-Gemeinden – für maximale Nähe zur Region.</p>
+          </div>
         </div>
-        <div data-anim data-delay="1">
-          <div class="stat-num">~<span class="counter" data-to="300">0</span></div>
-          <div class="stat-label">Besucher 2025</div>
+        <div class="home-feature-item" data-anim data-delay="2">
+          <div class="home-feature-icon">🌱</div>
+          <div class="home-feature-text">
+            <h4>Projekte für die Region</h4>
+            <p>Von Gemeinschaftsgärten bis Wildbienentrails – wir setzen Ideen um, die bleiben.</p>
+          </div>
         </div>
-        <div data-anim data-delay="2">
-          <div class="stat-num"><span class="counter" data-to="5">0</span></div>
-          <div class="stat-label">Gemeinden</div>
-        </div>
-        <div data-anim data-delay="3">
-          <div class="stat-num"><span class="counter" data-to="10">0</span>+</div>
-          <div class="stat-label">Firmen am Rundweg 2026</div>
+        <div class="home-feature-item" data-anim data-delay="3">
+          <div class="home-feature-icon">🤝</div>
+          <div class="home-feature-text">
+            <h4>Vernetzung</h4>
+            <p>Einwohner, Vereine, Gemeinden und Unternehmen unter einem Dach.</p>
+          </div>
         </div>
       </div>
+
     </div>
   </div>
-
-  <!-- Teaser -->
-  <div class="teaser-section">
-    <div class="container">
-      <div class="teaser-inner">
-        <p class="sec-label" data-anim>12. September 2026</p>
-        <h2 class="sec-title" data-anim data-delay="1">Der 4. Sisslerfeld-Tag in Münchwilen</h2>
-        <div class="rule c" data-anim data-delay="2"></div>
-        <p data-anim data-delay="2">Erstmals werden lokale Unternehmen aktiv einbezogen und öffnen ihre Tore. Ein Kultur- und Familienfest, das die Gemeinschaft im Sisslerfeld zusammenbringt – mit Musik, Programm, Begegnungen und einem einzigartigen Rundweg.</p>
-        <button class="btn btn-navy" data-anim data-delay="3" onclick="showPage('st')">Mehr erfahren →</button>
-      </div>
-    </div>
-  </div>
-
-  <!-- Feature row -->
-  <section style="background:var(--bg);">
-    <div class="container">
-      <div class="three">
-        <div data-anim style="text-align:center;padding:2rem 1rem;">
-          <div style="width:56px;height:56px;background:rgba(18,142,214,.12);border-radius:50%;margin:0 auto 1.2rem;display:flex;align-items:center;justify-content:center;font-size:1.5rem;">🎉</div>
-          <h4 style="font-weight:700;color:var(--navy);margin-bottom:.5rem;">Jährlicher Anlass</h4>
-          <p style="font-size:.87rem;color:#666;line-height:1.7;">Jedes Jahr in einer anderen Gemeinde – für maximale Nähe zur Region.</p>
-        </div>
-        <div data-anim data-delay="1" style="text-align:center;padding:2rem 1rem;">
-          <div style="width:56px;height:56px;background:rgba(237,28,36,.1);border-radius:50%;margin:0 auto 1.2rem;display:flex;align-items:center;justify-content:center;font-size:1.5rem;">🌱</div>
-          <h4 style="font-weight:700;color:var(--navy);margin-bottom:.5rem;">Projekte für die Region</h4>
-          <p style="font-size:.87rem;color:#666;line-height:1.7;">Von Gemeinschaftsgärten bis Wildbienentrails – wir setzen Ideen um, die bleiben.</p>
-        </div>
-        <div data-anim data-delay="2" style="text-align:center;padding:2rem 1rem;">
-          <div style="width:56px;height:56px;background:rgba(2,63,82,.1);border-radius:50%;margin:0 auto 1.2rem;display:flex;align-items:center;justify-content:center;font-size:1.5rem;">🤝</div>
-          <h4 style="font-weight:700;color:var(--navy);margin-bottom:.5rem;">Vernetzung</h4>
-          <p style="font-size:.87rem;color:#666;line-height:1.7;">Einwohner, Vereine, Gemeinden und Unternehmen unter einem Dach.</p>
-        </div>
-      </div>
-    </div>
-  </section>
 
 </div><!-- /home -->
 
@@ -922,10 +919,11 @@ footer a{color:var(--lightblue);text-decoration:none;}
     </div>
   </div>
 
-  <!-- Flyer + Programm -->
+  <!-- Programm -->
   <section>
     <div class="container">
       <div class="two">
+
         <!-- Flyer -->
         <div data-anim="left">
           <p class="sec-label">Veranstaltungsflyer</p>
@@ -944,220 +942,109 @@ footer a{color:var(--lightblue);text-decoration:none;}
 
         <!-- Programm -->
         <div data-anim="right">
-          <p class="sec-label">Rahmenprogramm</p>
+          <p class="sec-label">Tagesprogramm</p>
           <h2 class="sec-title">Was euch erwartet</h2>
           <div class="rule"></div>
-          <div class="prog-wrap">
-            <div class="prog-item">
-              <div class="prog-time">17:00</div>
-              <div class="prog-dot-wrap"><div class="prog-dot"></div><div class="prog-line"></div></div>
-              <div class="prog-content">
-                <div class="prog-event">Begrüssung</div>
-                <div class="prog-sub">Durch den Verein und die Gemeinde</div>
+
+          <!-- Block 1: Stiefelweitwurf & Firmenwanderung -->
+          <div class="prog-block wanderung-block">
+            <div class="prog-section-label wanderung">🥾 Stiefelweitwurf &amp; Firmenwanderung</div>
+            <div class="prog-wrap">
+              <div class="prog-item">
+                <div class="prog-time blue-time">14:00</div>
+                <div class="prog-dot-wrap"><div class="prog-dot"></div><div class="prog-line"></div></div>
+                <div class="prog-content">
+                  <div class="prog-event">Lokale Firmenwanderung</div>
+                  <div class="prog-sub">Rundweg durch die Betriebe des Sisslerfelds bis 16:45 Uhr</div>
+                </div>
               </div>
-            </div>
-            <div class="prog-item">
-              <div class="prog-time">17:45</div>
-              <div class="prog-dot-wrap"><div class="prog-dot"></div><div class="prog-line"></div></div>
-              <div class="prog-content">
-                <div class="prog-event">Ansprache Daniel Erne</div>
-                <div class="prog-sub">Worte zur Region und zur Entwicklung des Sisslerfelds</div>
+              <div class="prog-item">
+                <div class="prog-time blue-time">14:00</div>
+                <div class="prog-dot-wrap"><div class="prog-dot"></div><div class="prog-line"></div></div>
+                <div class="prog-content">
+                  <div class="prog-event">Start Stiefelweitwurf</div>
+                  <div class="prog-sub">Organisiert durch die Feuerwehr Sisslerfeld · bis 16:00 Uhr</div>
+                  <a class="prog-link" href="http://swww.ch" target="_blank">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+                    Jetzt anmelden: swww.ch
+                  </a>
+                </div>
               </div>
-            </div>
-            <div class="prog-item">
-              <div class="prog-time">18:15</div>
-              <div class="prog-dot-wrap"><div class="prog-dot"></div><div class="prog-line"></div></div>
-              <div class="prog-content">
-                <div class="prog-event">Schlag den Regierungsrat</div>
-                <div class="prog-sub">Mit Dieter Egli</div>
-              </div>
-            </div>
-            <div class="prog-item">
-              <div class="prog-time">19:00</div>
-              <div class="prog-dot-wrap"><div class="prog-dot"></div><div class="prog-line"></div></div>
-              <div class="prog-content">
-                <div class="prog-event">Songquiz</div>
-                <div class="prog-sub">Publikum gesucht – testet euer Musikwissen</div>
-              </div>
-            </div>
-            <div class="prog-item" style="border-bottom:none;">
-              <div class="prog-time">19:45</div>
-              <div class="prog-dot-wrap"><div class="prog-dot" style="background:var(--red);"></div></div>
-              <div class="prog-content">
-                <div class="prog-event">Band: Frisch</div>
-                <div class="prog-sub">Live-Musik – bekannt vom Sisslerfeld-Tag 2024</div>
+              <div class="prog-item" style="border-bottom:none;">
+                <div class="prog-time blue-time">16:45</div>
+                <div class="prog-dot-wrap"><div class="prog-dot" style="background:var(--red);"></div></div>
+                <div class="prog-content">
+                  <div class="prog-event">Rangverkündigung Stiefelweitwurf</div>
+                  <div class="prog-sub">Wer wirft am weitesten?</div>
+                </div>
               </div>
             </div>
           </div>
+
+          <!-- Block 2: Rahmenprogramm -->
+          <div class="prog-block rahmen-block">
+            <div class="prog-section-label rahmen">🎪 Rahmenprogramm auf dem Festgelände</div>
+            <div class="prog-wrap">
+              <div class="prog-item">
+                <div class="prog-time">17:00</div>
+                <div class="prog-dot-wrap"><div class="prog-dot navy-dot"></div><div class="prog-line"></div></div>
+                <div class="prog-content">
+                  <div class="prog-event">Begrüssung</div>
+                  <div class="prog-sub">Durch den Verein und die Gemeinde</div>
+                </div>
+              </div>
+              <div class="prog-item">
+                <div class="prog-time">17:45</div>
+                <div class="prog-dot-wrap"><div class="prog-dot navy-dot"></div><div class="prog-line"></div></div>
+                <div class="prog-content">
+                  <div class="prog-event">Ansprache Daniel Erne</div>
+                  <div class="prog-sub">Worte zur Region und zur Entwicklung des Sisslerfelds</div>
+                </div>
+              </div>
+              <div class="prog-item">
+                <div class="prog-time">18:15</div>
+                <div class="prog-dot-wrap"><div class="prog-dot navy-dot"></div><div class="prog-line"></div></div>
+                <div class="prog-content">
+                  <div class="prog-event">Schlag den Regierungsrat</div>
+                  <div class="prog-sub">Mit Dieter Egli</div>
+                </div>
+              </div>
+              <div class="prog-item">
+                <div class="prog-time">19:00</div>
+                <div class="prog-dot-wrap"><div class="prog-dot navy-dot"></div><div class="prog-line"></div></div>
+                <div class="prog-content">
+                  <div class="prog-event">Songquiz</div>
+                  <div class="prog-sub">Publikum gesucht – testet euer Musikwissen</div>
+                </div>
+              </div>
+              <div class="prog-item" style="border-bottom:none;">
+                <div class="prog-time">19:45</div>
+                <div class="prog-dot-wrap"><div class="prog-dot" style="background:var(--red);"></div></div>
+                <div class="prog-content">
+                  <div class="prog-event">Band: Frisch</div>
+                  <div class="prog-sub">Live-Musik – bekannt vom Sisslerfeld-Tag 2024</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Rundweg -->
-  <section class="rundweg">
+  <!-- Rundweg: Coming Soon -->
+  <section style="background:var(--bg);">
     <div class="container">
       <p class="sec-label" data-anim>Rundweg durch das Sisslerfeld</p>
       <h2 class="sec-title" data-anim data-delay="1">Unternehmen öffnen ihre Tore</h2>
       <div class="rule" data-anim data-delay="2"></div>
-      <p data-anim data-delay="2" style="color:#555;max-width:640px;line-height:1.85;font-size:.95rem;margin-bottom:2rem;">Zum ersten Mal geben lokale Betriebe Einblick in ihre Arbeit. Entdecken Sie das Sisslerfeld auf einem eigens eingerichteten Rundweg durch die Region.</p>
+      <p data-anim data-delay="2" style="color:#555;max-width:640px;line-height:1.85;font-size:.95rem;">Zum ersten Mal geben lokale Betriebe Einblick in ihre Arbeit. Entdecken Sie das Sisslerfeld auf einem eigens eingerichteten Rundweg durch die Region.</p>
       
-      <div class="company-grid-graphic">
-        
-        <!-- Syngenta -->
-        <div class="co-card-graphic" data-anim>
-          <div class="co-card-header">
-            <div class="co-graphic-icon">🧪</div>
-            <div class="co-title-wrap">
-              <h3>Syngenta</h3>
-              <span class="co-station-num">Station 1</span>
-            </div>
-          </div>
-          <p class="co-desc">Infostand mit 1–2 Feuerwehrfahrzeugen inklusive Drehleiter. Eine Werkführung ist leider nicht möglich.</p>
-          <div class="co-footer-meta">
-            <span class="co-tag">Infostand & Sicherheit</span>
-          </div>
-        </div>
-
-        <!-- Bäumle Transport -->
-        <div class="co-card-graphic" data-anim data-delay="1">
-          <div class="co-card-header">
-            <div class="co-graphic-icon">🚛</div>
-            <div class="co-title-wrap">
-              <h3>Bäumle Transport</h3>
-              <span class="co-station-num">Station 2</span>
-            </div>
-          </div>
-          <p class="co-desc">Die Tore werden geöffnet. Besonders die neuen E-LKWs sind zu bestaunen – mit tollen Mitfahrgelegenheiten auf dem Areal.</p>
-          <div class="co-footer-meta">
-            <span class="co-tag">Offene Tore · E-Mobilität</span>
-          </div>
-        </div>
-
-        <!-- ERNE AG Holzbau (Utilises actual sponsor logo) -->
-        <div class="co-card-graphic" data-anim data-delay="2">
-          <div class="co-card-header">
-            <div class="co-logo-container">
-              <img class="co-logo-img-rundweg" src="img/erne.jpg" alt="ERNE AG Holzbau Logo">
-            </div>
-            <div class="co-title-wrap">
-              <h3>ERNE AG Holzbau</h3>
-              <span class="co-station-num">Station 3</span>
-            </div>
-          </div>
-          <p class="co-desc">Spannende Hallenbesichtigung in der ehemaligen Jakem-Halle mit mehreren Live-Stationen rund um den modernen Holzbau.</p>
-          <div class="co-footer-meta">
-            <span class="co-tag">Interaktive Führung</span>
-          </div>
-        </div>
-
-        <!-- ERNE Gruppe (Utilises actual sponsor logo) -->
-        <div class="co-card-graphic" data-anim>
-          <div class="co-card-header">
-            <div class="co-logo-container">
-              <img class="co-logo-img-rundweg" src="img/erne.jpg" alt="ERNE Gruppe Logo">
-            </div>
-            <div class="co-title-wrap">
-              <h3>ERNE Gruppe</h3>
-              <span class="co-station-num">Station 4</span>
-            </div>
-          </div>
-          <p class="co-desc">ERNE Immo, ERNE Bauunternehmung, K+B und AGSM präsentieren sich gemeinsam mit vielseitigen Infoständen und Aktionen.</p>
-          <div class="co-footer-meta">
-            <span class="co-tag">Infostände & Erlebnisse</span>
-          </div>
-        </div>
-
-        <!-- SKAN Stein AG -->
-        <div class="co-card-graphic" data-anim data-delay="1">
-          <div class="co-card-header">
-            <div class="co-graphic-icon">💎</div>
-            <div class="co-title-wrap">
-              <h3>SKAN Stein AG</h3>
-              <span class="co-station-num">Station 5</span>
-            </div>
-          </div>
-          <p class="co-desc">Tag der offenen Tür mit 3–4 spannenden Posten. Detaillierte Einblicke folgen in Kürze vor Ort.</p>
-          <div class="co-footer-meta">
-            <span class="co-tag">Tag der offenen Tür</span>
-          </div>
-        </div>
-
-        <!-- Heizoel-Fredy -->
-        <div class="co-card-graphic" data-anim data-delay="2">
-          <div class="co-card-header">
-            <div class="co-graphic-icon">🔥</div>
-            <div class="co-title-wrap">
-              <h3>Heizoel-Fredy</h3>
-              <span class="co-station-num">Station 6</span>
-            </div>
-          </div>
-          <p class="co-desc">Stellt Arealfläche für den beliebten Stiefelweitwurf zur Verfügung, öffnet die Werkstatttore, zeigt grosse LKWs und bietet gemütliche Sitzgelegenheiten.</p>
-          <div class="co-footer-meta">
-            <span class="co-tag">Stiefelweitwurf & LKWs</span>
-          </div>
-        </div>
-
-        <!-- Carbagas AG -->
-        <div class="co-card-graphic" data-anim>
-          <div class="co-card-header">
-            <div class="co-graphic-icon">🫧</div>
-            <div class="co-title-wrap">
-              <h3>Carbagas AG</h3>
-              <span class="co-station-num">Station 7</span>
-            </div>
-          </div>
-          <p class="co-desc">Interessante Firmenvorstellung im östlichen Werkteil mit 2–3 spannenden Gasdemonstrationen und bunten Ballonen für alle Kinder.</p>
-          <div class="co-footer-meta">
-            <span class="co-tag">Vorführungen & Familie</span>
-          </div>
-        </div>
-
-        <!-- Bodenbender & Daetwiler -->
-        <div class="co-card-graphic" data-anim data-delay="1">
-          <div class="co-card-header">
-            <div class="co-graphic-icon">♻️</div>
-            <div class="co-title-wrap">
-              <h3>Bodenbender & Daetwiler</h3>
-              <span class="co-station-num">Station 8</span>
-            </div>
-          </div>
-          <p class="co-desc">Einladung zum Tag der offenen Tür bei der bekannten Bodenbender-Halle. Entdecken Sie nachhaltige Recycling-Ideen.</p>
-          <div class="co-footer-meta">
-            <span class="co-tag">Offene Tore & Recycling</span>
-          </div>
-        </div>
-
-        <!-- HEK Stein AG -->
-        <div class="co-card-graphic" data-anim data-delay="2">
-          <div class="co-card-header">
-            <div class="co-graphic-icon">🪨</div>
-            <div class="co-title-wrap">
-              <h3>HEK Stein AG</h3>
-              <span class="co-station-num">Station 9</span>
-            </div>
-          </div>
-          <p class="co-desc">Aktive Beteiligung direkt am Sisslerfeld-Tag mit Präsentationen vor Ort. Genaue Details werden bald bekanntgegeben.</p>
-          <div class="co-footer-meta">
-            <span class="co-tag">Präsentation vor Ort</span>
-          </div>
-        </div>
-
-        <!-- Burri Automobile -->
-        <div class="co-card-graphic" data-anim>
-          <div class="co-card-header">
-            <div class="co-graphic-icon">🚗</div>
-            <div class="co-title-wrap">
-              <h3>Burri Automobile</h3>
-              <span class="co-station-num">Station 10</span>
-            </div>
-          </div>
-          <p class="co-desc">Grosser Tag der offenen Tür – das moderne Autohaus öffnet seine Werkstätten und Hallen weit für alle Besucherinnen und Besucher.</p>
-          <div class="co-footer-meta">
-            <span class="co-tag">Offene Tore & Auto-Schau</span>
-          </div>
-        </div>
-
+      <div class="coming-soon-box" data-anim data-delay="3">
+        <div class="cs-icon">🗺️</div>
+        <h3>Coming Soon</h3>
+        <p>Die detaillierten Informationen zu den einzelnen Stationen des Rundwegs werden in Kürze hier veröffentlicht. Schau bald wieder vorbei!</p>
       </div>
     </div>
   </section>
@@ -1166,100 +1053,71 @@ footer a{color:var(--lightblue);text-decoration:none;}
   <div class="ok-section">
     <div class="container">
       <p class="sec-label" style="color:var(--lightblue);" data-anim>Wer dahintersteckt</p>
-      <h2 class="sec-title w" data-anim data-delay="1">Organisationskomitee & Arbeitsgruppen</h2>
+      <h2 class="sec-title w" data-anim data-delay="1">Organisationskomitee &amp; Arbeitsgruppen</h2>
       <div class="rule" data-anim data-delay="2"></div>
       
       <div class="ok-groups-container">
-        
-        <!-- Group 1: Gesamtleitung & Infrastruktur -->
         <div class="ok-group-card" data-anim>
           <h3>Infrastruktur</h3>
           <div class="ok-members-flex">
             <div class="ok-member-row">
               <div class="ok-avatar-circle">CE</div>
-              <div class="ok-details">
-                <span class="name">Chantal Eyer</span>
-              </div>
+              <div class="ok-details"><span class="name">Chantal Eyer</span></div>
             </div>
           </div>
         </div>
-
-        <!-- Group 2: Kommunikation -->
         <div class="ok-group-card" data-anim data-delay="1">
           <h3>Kommunikation</h3>
           <div class="ok-members-flex">
             <div class="ok-member-row">
               <div class="ok-avatar-circle">JA</div>
-              <div class="ok-details">
-                <span class="name">Justin Acklin</span>
-              </div>
+              <div class="ok-details"><span class="name">Justin Acklin</span></div>
             </div>
             <div class="ok-member-row">
               <div class="ok-avatar-circle">PS</div>
-              <div class="ok-details">
-                <span class="name">Petra Schumacher</span>
-              </div>
+              <div class="ok-details"><span class="name">Petra Schumacher</span></div>
             </div>
             <div class="ok-member-row">
               <div class="ok-avatar-circle">SS</div>
-              <div class="ok-details">
-                <span class="name">Sabine Schmelzer</span>
-              </div>
+              <div class="ok-details"><span class="name">Sabine Schmelzer</span></div>
             </div>
           </div>
         </div>
-
-        <!-- Group 3: Sponsoring -->
         <div class="ok-group-card" data-anim data-delay="2">
           <h3>Sponsoring</h3>
           <div class="ok-members-flex">
             <div class="ok-member-row">
               <div class="ok-avatar-circle">JE</div>
-              <div class="ok-details">
-                <span class="name">Janis Eberle</span>
-              </div>
+              <div class="ok-details"><span class="name">Janis Eberle</span></div>
             </div>
             <div class="ok-member-row">
               <div class="ok-avatar-circle">MP</div>
-              <div class="ok-details">
-                <span class="name">Manuela Prausse</span>
-              </div>
+              <div class="ok-details"><span class="name">Manuela Prausse</span></div>
             </div>
           </div>
         </div>
-
-        <!-- Group 4: Unterhaltung -->
         <div class="ok-group-card" data-anim>
           <h3>Unterhaltung</h3>
           <div class="ok-members-flex">
             <div class="ok-member-row">
               <div class="ok-avatar-circle">AP</div>
-              <div class="ok-details">
-                <span class="name">Alessio Porriciello</span>
-              </div>
+              <div class="ok-details"><span class="name">Alessio Porriciello</span></div>
             </div>
           </div>
         </div>
-
-        <!-- Group 5: Verpflegung -->
         <div class="ok-group-card" data-anim data-delay="1">
           <h3>Verpflegung</h3>
           <div class="ok-members-flex">
             <div class="ok-member-row">
               <div class="ok-avatar-circle">SS</div>
-              <div class="ok-details">
-                <span class="name">Susi Schauli</span>
-              </div>
+              <div class="ok-details"><span class="name">Susi Schauli</span></div>
             </div>
             <div class="ok-member-row">
               <div class="ok-avatar-circle">SL</div>
-              <div class="ok-details">
-                <span class="name">Sandra Lehner</span>
-              </div>
+              <div class="ok-details"><span class="name">Sandra Lehner</span></div>
             </div>
           </div>
         </div>
-
       </div>
     </div>
   </div>
@@ -1267,12 +1125,11 @@ footer a{color:var(--lightblue);text-decoration:none;}
   <!-- Sponsoren -->
   <div class="sponsors">
     <div class="container" style="text-align:center;">
-      <p class="sec-label" data-anim>Partner & Gönner</p>
+      <p class="sec-label" data-anim>Partner &amp; Gönner</p>
       <h2 class="sec-title" data-anim data-delay="1">Unsere Sponsoren</h2>
       <div class="rule c" data-anim data-delay="2"></div>
       <p style="color:#555;font-size:.9rem;margin-bottom:3rem;" data-anim data-delay="2">Wir danken unseren Partnern und Sponsoren von Herzen für ihre wertvolle Unterstützung.</p>
       
-      <!-- Hauptsponsor (PLATIN-Partner) -->
       <div class="sponsor-tier" data-anim>
         <div class="tier-header">
           <div class="tier-line"></div>
@@ -1289,7 +1146,6 @@ footer a{color:var(--lightblue);text-decoration:none;}
         </div>
       </div>
 
-      <!-- Nebensponsoren (GOLD-Partner) -->
       <div class="sponsor-tier" data-anim>
         <div class="tier-header">
           <div class="tier-line"></div>
@@ -1297,46 +1153,29 @@ footer a{color:var(--lightblue);text-decoration:none;}
           <div class="tier-line"></div>
         </div>
         <div class="sponsor-grid-tiered">
-          
           <div class="sp-box-modern sp-gold-card">
-            <div class="sp-logo-container">
-              <img class="sp-logo-img" src="img/bachem.png" alt="Bachem AG">
-            </div>
+            <div class="sp-logo-container"><img class="sp-logo-img" src="img/bachem.png" alt="Bachem AG"></div>
             <span class="sp-name">Bachem AG</span>
           </div>
-
           <div class="sp-box-modern sp-gold-card">
-            <div class="sp-logo-container">
-              <img class="sp-logo-img" src="img/raifeisen.png" alt="Raiffeisenbank">
-            </div>
+            <div class="sp-logo-container"><img class="sp-logo-img" src="img/raifeisen.png" alt="Raiffeisenbank"></div>
             <span class="sp-name">Raiffeisenbank Regio Frick-Mettauertal</span>
           </div>
-
           <div class="sp-box-modern sp-gold-card">
-            <div class="sp-logo-container">
-              <img class="sp-logo-img" src="img/ksl.jpg" alt="KSL Ingenieure AG">
-            </div>
+            <div class="sp-logo-container"><img class="sp-logo-img" src="img/ksl.jpg" alt="KSL Ingenieure AG"></div>
             <span class="sp-name">KSL Ingenieure AG</span>
           </div>
-
           <div class="sp-box-modern sp-gold-card">
-            <div class="sp-logo-container">
-              <img class="sp-logo-img" src="img/swissco.svg" alt="SwissCo AG">
-            </div>
+            <div class="sp-logo-container"><img class="sp-logo-img" src="img/swissco.svg" alt="SwissCo AG"></div>
             <span class="sp-name">SwissCo AG</span>
           </div>
-
           <div class="sp-box-modern sp-gold-card">
-            <div class="sp-logo-container">
-              <img class="sp-logo-img" src="img/naturenergie.png" alt="Naturenergie">
-            </div>
+            <div class="sp-logo-container"><img class="sp-logo-img" src="img/naturenergie.png" alt="Naturenergie"></div>
             <span class="sp-name">Naturenergie</span>
           </div>
-
         </div>
       </div>
 
-      <!-- Gönner (SILBER-Partner) -->
       <div class="sponsor-tier" data-anim>
         <div class="tier-header">
           <div class="tier-line"></div>
@@ -1344,25 +1183,17 @@ footer a{color:var(--lightblue);text-decoration:none;}
           <div class="tier-line"></div>
         </div>
         <div class="sponsor-grid-tiered">
-          
           <div class="sp-box-modern sp-silber-card">
-            <div class="sp-logo-container">
-              <img class="sp-logo-img" src="img/westfalen.png" alt="Westfalen Gas GmbH">
-            </div>
+            <div class="sp-logo-container"><img class="sp-logo-img" src="img/westfalen.png" alt="Westfalen Gas GmbH"></div>
             <span class="sp-name">Westfalen Gas GmbH</span>
           </div>
-
           <div class="sp-box-modern sp-silber-card">
-            <div class="sp-logo-container">
-              <img class="sp-logo-img" src="img/stucki.png" alt="Stucki Gartenbau AG">
-            </div>
+            <div class="sp-logo-container"><img class="sp-logo-img" src="img/stucki.png" alt="Stucki Gartenbau AG"></div>
             <span class="sp-name">Stucki Gartenbau AG</span>
           </div>
-
         </div>
       </div>
 
-      <!-- Unterstützer (BRONZE-Partner) -->
       <div class="sponsor-tier" data-anim>
         <div class="tier-header">
           <div class="tier-line"></div>
@@ -1370,21 +1201,14 @@ footer a{color:var(--lightblue);text-decoration:none;}
           <div class="tier-line"></div>
         </div>
         <div class="sponsor-grid-tiered">
-          
           <div class="sp-box-modern sp-bronze-card">
-            <div class="sp-logo-container">
-              <img class="sp-logo-img" src="img/elektro.png" alt="JS Elektro Sicherheit GmbH">
-            </div>
+            <div class="sp-logo-container"><img class="sp-logo-img" src="img/elektro.png" alt="JS Elektro Sicherheit GmbH"></div>
             <span class="sp-name">JS Elektro Sicherheit GmbH</span>
           </div>
-
           <div class="sp-box-modern sp-bronze-card">
-            <div class="sp-logo-container">
-              <img class="sp-logo-img" src="img/landi.svg" alt="Landi Frila Genossenschaft">
-            </div>
+            <div class="sp-logo-container"><img class="sp-logo-img" src="img/landi.svg" alt="Landi Frila Genossenschaft"></div>
             <span class="sp-name">Landi Frila Genossenschaft</span>
           </div>
-
         </div>
       </div>
 
@@ -1421,7 +1245,6 @@ footer a{color:var(--lightblue);text-decoration:none;}
           <p>Um die Selbstorganisation vor Ort zu stärken, wurde im <strong>April 2024</strong> der Verein «Netzwerk Unser Sisslerfeld» offiziell gegründet – mit dem klaren Auftrag, die Koordination der prämierten Projekte zu übernehmen und eine active Gemeinschaft zu fördern.</p>
           <p>Die Sisslerfeld-Gemeinden <strong>Eiken, Münchwilen, Stein und Sisseln</strong> sowie der Kanton sprachen dem Verein ihre volle Unterstützung aus und vergaben ein offizielles Koordinationsmandat.</p>
         </div>
-        
         <div data-anim="right">
           <div class="founding-img-wrapper">
             <img class="founding-img-real" src="img/grundung.jpeg" alt="Gründungsfoto Unser Sisslerfeld" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
@@ -1429,9 +1252,8 @@ footer a{color:var(--lightblue);text-decoration:none;}
               <div class="ph-icon">👥<span>Gründungsfoto (img/grundung.jpeg)</span></div>
             </div>
           </div>
-          
           <div style="margin-top:1.5rem;padding:1.4rem;background:var(--white);border-radius:8px;border-left:4px solid var(--blue);box-shadow:0 4px 16px rgba(0,0,0,.06);">
-            <p style="font-size:.82rem;color:var(--blue);font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin-bottom:.5rem;">Mandat & Finanzen</p>
+            <p style="font-size:.82rem;color:var(--blue);font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin-bottom:.5rem;">Mandat &amp; Finanzen</p>
             <p style="font-size:.88rem;color:#555;line-height:1.75;">Das Koordinationsmandat umfasst ca. 240 Stunden/Jahr. Die jährlichen Kosten von CHF 8'400 werden solidarisch auf die vier Gemeinden und den Kanton aufgeteilt (<strong>CHF 1'680 pro Partei</strong>).</p>
           </div>
         </div>
@@ -1439,7 +1261,7 @@ footer a{color:var(--lightblue);text-decoration:none;}
     </div>
   </div>
 
-  <!-- Mission / Zweck -->
+  <!-- Mission / Zweck — 3 boxes -->
   <div class="zweck-section">
     <div class="container">
       <p class="sec-label" data-anim style="color:var(--lightblue);">Vereinszweck</p>
@@ -1451,20 +1273,15 @@ footer a{color:var(--lightblue);text-decoration:none;}
           <h4>Projekte umsetzen</h4>
           <p>Koordination und Umsetzung der im Wettbewerb «Sisslerfeld 2022» prämierten Projekte bis zum erfolgreichen Abschluss.</p>
         </div>
-        <div class="zweck-box" data-anim="1" data-delay="1">
+        <div class="zweck-box" data-anim data-delay="1">
           <div class="zweck-icon">🤝</div>
           <h4>Gemeinschaft stärken</h4>
           <p>Förderung einer aktiven Kultur und des Austauschs zwischen den Einwohnern der Gemeinden Eiken, Münchwilen, Stein, Sisseln und Bad Säckingen.</p>
         </div>
-        <div class="zweck-box" data-anim="2" data-delay="2">
+        <div class="zweck-box" data-anim data-delay="2">
           <div class="zweck-icon">🎉</div>
           <h4>Sisslerfeld-Tag</h4>
           <p>Organisation des jährlichen Sisslerfeld-Tages – rotierend in den verschiedenen Gemeinden, um das Gemeinschaftsgefühl zu stärken.</p>
-        </div>
-        <div class="zweck-box" data-anim="3" data-delay="3">
-          <div class="zweck-icon">📣</div>
-          <h4>Region sichtbar machen</h4>
-          <p>Das Sisslerfeld as einzigartigen Lebens- und Wirtschaftsraum in der Öffentlichkeit positionieren und bekannt machen.</p>
         </div>
       </div>
     </div>
@@ -1482,7 +1299,6 @@ footer a{color:var(--lightblue);text-decoration:none;}
             <p>Vier Jahre, vier Sisslerfeld-Tage, zahlreiche Projekte und eine Region, die zusammenwächst.</p>
           </div>
           <div class="timeline">
-            
             <div class="tl-item" data-anim>
               <div class="tl-dot">1</div>
               <div>
@@ -1491,7 +1307,6 @@ footer a{color:var(--lightblue);text-decoration:none;}
                 <div class="tl-text">Ein öffentlicher Wettbewerb bringt innovative Projektideen für die Region hervor. Ideen wie der Gemeinschaftsgarten, der Familientreffpunkt und der 5-Gemeinden-Park werden prämiert.</div>
               </div>
             </div>
-            
             <div class="tl-item" data-anim data-delay="1">
               <div class="tl-dot">2</div>
               <div>
@@ -1500,7 +1315,6 @@ footer a{color:var(--lightblue);text-decoration:none;}
                 <div class="tl-text">Der erste Sisslerfeld-Tag findet statt. «Pop Meets Classic» von Ingo Anders feiert seine Premiere: Eine unvergessliche Inszenierung im Saalbau Stein mit Oper, Musical, Swing und Pop.</div>
               </div>
             </div>
-            
             <div class="tl-item" data-anim data-delay="2">
               <div class="tl-dot">3</div>
               <div>
@@ -1509,7 +1323,6 @@ footer a{color:var(--lightblue);text-decoration:none;}
                 <div class="tl-text">Der Verein wird offiziell gegründet, um die Selbstorganisation der Region zu stärken. Die Gemeinden vergeben ein offizielles Koordinationsmandat.</div>
               </div>
             </div>
-            
             <div class="tl-item" data-anim>
               <div class="tl-dot">4</div>
               <div>
@@ -1519,7 +1332,6 @@ footer a{color:var(--lightblue);text-decoration:none;}
                 <span class="tl-stat">~100 Besucher</span>
               </div>
             </div>
-            
             <div class="tl-item" data-anim data-delay="1">
               <div class="tl-dot">5</div>
               <div>
@@ -1529,7 +1341,6 @@ footer a{color:var(--lightblue);text-decoration:none;}
                 <span class="tl-stat">~300 Besucher</span>
               </div>
             </div>
-            
             <div class="tl-item" data-anim data-delay="2" style="padding-bottom:0;">
               <div class="tl-dot" style="background:var(--red);border-color:var(--red);color:var(--white);">6</div>
               <div>
@@ -1538,27 +1349,22 @@ footer a{color:var(--lightblue);text-decoration:none;}
                 <div class="tl-text">Erstmals werden lokale Unternehmen aktiv einbezogen. Ein wunderschöner Rundweg lädt zum Entdecken des Sisslerfelds und seiner vielseitigen Betriebe ein.</div>
               </div>
             </div>
-            
           </div>
         </div>
         
-        <!-- Side area (Integrated Images "park" and "zelt" on the right sidebar) -->
         <div style="display:flex;flex-direction:column;gap:1.5rem;padding-top:5rem;" data-anim="right">
-          
           <div class="tl-image-box">
             <img src="img/park.jpg" alt="Gemeinden-Park & Familientreffpunkt" style="width:100%;height:100%;object-fit:cover;" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
             <div class="img-ph" style="height:100%; display:none; align-items:center; justify-content:center; background:linear-gradient(135deg,var(--navy) 0%,#045a7a 100%);">
               <div class="ph-icon">🌳<span>Park Foto (img/park.jpg)</span></div>
             </div>
           </div>
-
           <div class="tl-image-box">
             <img src="img/zelt.jpg" alt="Festgelände Münchwilen" style="width:100%;height:100%;object-fit:cover;" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
             <div class="img-ph" style="height:100%; display:none; align-items:center; justify-content:center; background:linear-gradient(135deg,var(--navy) 0%,#045a7a 100%);">
               <div class="ph-icon">🎪<span>Festzelt Foto (img/zelt.jpg)</span></div>
             </div>
           </div>
-
           <div style="padding:2rem;background:var(--bg);border-radius:10px;border-left:4px solid var(--blue);">
             <p style="font-size:.82rem;font-weight:700;color:var(--blue);text-transform:uppercase;letter-spacing:.1em;margin-bottom:.6rem;">Mitglied werden</p>
             <p style="font-size:.88rem;color:#555;line-height:1.7;margin-bottom:1.5rem;">Gestalten Sie das Sisslerfeld aktiv mit – als Mitglied sind Sie Teil unserer engagierten Gemeinschaft.</p>
@@ -1576,7 +1382,6 @@ footer a{color:var(--lightblue);text-decoration:none;}
       <h2 class="sec-title" data-anim data-delay="1">Die Sisslerfeld-Gemeinden</h2>
       <div class="rule c" data-anim data-delay="2"></div>
       <p style="color:#555;font-size:.92rem;max-width:500px;margin:0 auto 2rem;line-height:1.8;" data-anim data-delay="2">Der Verein verbindet die Menschen und Gemeinden des Sisslerfelds – und reicht bis über die Landesgrenze nach Bad Säckingen.</p>
-      
       <div class="gem-grid" data-anim data-delay="3">
         <a href="https://www.eiken.ch/" target="_blank" class="gem-chip">Eiken 
           <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
@@ -1616,10 +1421,7 @@ footer a{color:var(--lightblue);text-decoration:none;}
     <div class="container">
       <p class="sec-label" data-anim style="text-align: center;">Realisiert</p>
       <h2 class="sec-title" data-anim data-delay="1" style="margin-bottom:2rem; text-align: center;">Abgeschlossene Projekte</h2>
-      
       <div class="proj-grid">
-        
-        <!-- Merged Project: 5-Gemeinden Park & Familientreffpunkt with image 'gril' -->
         <div class="proj-card" data-anim>
           <div class="proj-img">
             <img src="img/gril.jpg" alt="5-Gemeinden Park und Familientreffpunkt" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
@@ -1630,15 +1432,13 @@ footer a{color:var(--lightblue);text-decoration:none;}
           <div class="proj-body">
             <div class="proj-text-content">
               <div class="proj-by">Alessio Porriciello · Marcel Notter</div>
-              <h3>5-Gemeinden-Park & Familientreffpunkt</h3>
+              <h3>5-Gemeinden-Park &amp; Familientreffpunkt</h3>
               <p>Fünf formschöne Sitzbänke aus Granit mit eingravierten Gemeindewappen verbinden die Sisslerfeld-Gemeinden symbolisch. Gefertigt wurden sie grenzüberschreitend von engagierten Schreiner-Lernenden aus Bad Säckingen. Direkt daneben lädt eine naturnahe Begegnungszone mit gemütlicher Feuerstelle, Grillmöglichkeiten und komfortablen Sitzbänken am idyllischen Rheinufer Familien und Wanderer zum Verweilen ein. Über eine wetterfeste, digitale Spielkiste mit App-Steuerung können zudem Sportgeräte wie Bälle, Badminton und Boccia personalfrei ausgeliehen werden.</p>
               <p style="margin-top:.6rem;font-size:.82rem;color:#888;">📍 Sisseln, Eichenallee zum Rhein</p>
             </div>
-            <span class="proj-badge badge-done">Realisiert & Eröffnet 2025</span>
+            <span class="proj-badge badge-done">Realisiert &amp; Eröffnet 2025</span>
           </div>
         </div>
-
-        <!-- Pop Meets Classic with image 'pop.png' -->
         <div class="proj-card" data-anim data-delay="1">
           <div class="proj-img">
             <img src="img/pop.png" alt="Pop Meets Classic" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
@@ -1655,16 +1455,11 @@ footer a{color:var(--lightblue);text-decoration:none;}
             <span class="proj-badge badge-done">Realisiert 2023</span>
           </div>
         </div>
-
       </div>
 
-      <!-- In Planung & Umsetzung -->
-      <p class="sec-label" data-anim style="margin-top:4rem; text-align: center;">In Planung & Umsetzung</p>
+      <p class="sec-label" data-anim style="margin-top:4rem; text-align: center;">In Planung &amp; Umsetzung</p>
       <h2 class="sec-title" data-anim data-delay="1" style="margin-bottom:2rem; text-align: center;">Laufende Projekte</h2>
-      
       <div class="proj-grid">
-        
-        <!-- Gemeinschaftsgarten with image 'garten.avif' with P. Schumacher formatted onto the next line -->
         <div class="proj-card" data-anim>
           <div class="proj-img">
             <img src="img/garten.avif" alt="Gemeinschaftsgarten" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
@@ -1682,8 +1477,6 @@ footer a{color:var(--lightblue);text-decoration:none;}
             <span class="proj-badge badge-progress">Aktiv seit 2023</span>
           </div>
         </div>
-
-        <!-- Wildbienentrail with image 'biene' -->
         <div class="proj-card" data-anim data-delay="1">
           <div class="proj-img">
             <img src="img/biene.jpg" alt="Wildbienentrail Sisslerfeld" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
@@ -1700,7 +1493,6 @@ footer a{color:var(--lightblue);text-decoration:none;}
             <span class="proj-badge badge-plan">In Planung</span>
           </div>
         </div>
-
       </div>
     </div>
   </section>
@@ -1727,7 +1519,7 @@ footer a{color:var(--lightblue);text-decoration:none;}
       <div class="rule" data-anim data-delay="2"></div>
       <div class="b-grid">
         <div class="b-card" data-anim><div class="b-icon">🌐</div><h4>Netzwerk</h4><p>Vernetzen Sie sich mit Einwohnern, Vereinen und Unternehmen der gesamten Region.</p></div>
-        <div class="b-card" data-anim data-delay="1"><div class="b-icon">🎉</div><h4>Events</h4><p>Erhalten Sie exklusive Einladungen und gestalten Sie den Sisslerfeld-Tag aktiv mit.</p></div>
+        <div class="b-card" data-anim data-delay="1"><div class="b-icon">🎉</div><h4>Events mitgestalten</h4><p>Gestalten Sie Events wie den Sisslerfeld-Tag aktiv mit.</p></div>
         <div class="b-card" data-anim data-delay="2"><div class="b-icon">💡</div><h4>Mitsprache</h4><p>Bringen Sie Ihre eigenen Projektideen ein und prägen Sie die Zukunft unserer Heimat.</p></div>
         <div class="b-card" data-anim data-delay="3"><div class="b-icon">❤️</div><h4>Gemeinschaft</h4><p>Seien Sie Teil einer lebendigen, engagierten und solidarischen Gemeinschaft.</p></div>
       </div>
@@ -1747,16 +1539,15 @@ footer a{color:var(--lightblue);text-decoration:none;}
         <div class="fg"><label>E-Mail *</label><input type="email" id="m-email" placeholder="max@beispiel.ch"></div>
         <div class="fg"><label>Gemeinde</label><input type="text" id="m-gemeinde" placeholder="z.B. Münchwilen, Sisseln, …"></div>
         
-        <!-- Interactive Membership Select -->
         <div class="fg">
           <label>Gewünschte Mitgliedschafts-Art</label>
-          <select id="m-typ">
-            <option value="helfer">Helfende Person (Mithilfe an Events & OK)</option>
+          <select id="m-typ" onchange="toggleOkVisibility()">
+            <option value="helfer">Helfende Person (Mithilfe an Events &amp; OK)</option>
             <option value="goenner">Gönnende Person (Finanzieller Beitrag ab CHF 50.-/Jahr)</option>
           </select>
         </div>
 
-        <!-- Custom Interactive Checkbox Card: OK Interest -->
+        <!-- OK Checkbox: only shown for 'helfende Person' -->
         <div class="checkbox-card" id="okCheckboxCard" onclick="toggleOkCheckbox()">
           <div class="custom-box">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
@@ -1807,7 +1598,7 @@ footer a{color:var(--lightblue);text-decoration:none;}
           </div>
           <div style="margin-top:2rem;padding:1.4rem;background:var(--white);border-radius:8px;border-left:4px solid var(--lightblue);box-shadow:0 4px 16px rgba(0,0,0,.06);">
             <p style="font-size:.8rem;font-weight:700;color:var(--navy);margin-bottom:.4rem;text-transform:uppercase;letter-spacing:.08em;">Netzwerk Unser Sisslerfeld</p>
-            <p style="font-size:.87rem;color:#555;line-height:1.75;">Verein gegründet April 2024<br>Gemeinden Eiken · Münchwilen · Stein · Sisseln</p>
+            <p style="font-size:.87rem;color:#555;line-height:1.75;">Verein gegründet April 2024<br>Gemeinden Eiken · Münchwilen · Stein · Sisseln · Bad Säckingen</p>
           </div>
         </div>
         <div class="k-form" data-anim="right">
@@ -1833,15 +1624,15 @@ footer a{color:var(--lightblue);text-decoration:none;}
 <footer>
   <div class="ft-top">
     <a class="ft-soc" href="https://www.facebook.com/profile.php?id=61558378316151" target="_blank">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c4.56-.93 8-4.96 8-9.75z"/></svg>
+      <svg class="ft-fb-icon" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c4.56-.93 8-4.96 8-9.75z"/></svg>
     </a>
     <a class="ft-soc" href="https://www.instagram.com/netzwerk_unser_sisslerfeld/" target="_blank">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+      <svg class="ft-ig-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
     </a>
   </div>
   <p style="margin-bottom:.5rem;"><strong>Netzwerk Unser Sisslerfeld</strong></p>
   <p style="margin-bottom:1.2rem;line-height:2;">
-    <a href="#" onclick="showPage('kontakt');return false;">Contact</a> &nbsp;·&nbsp;
+    <a href="#" onclick="showPage('kontakt');return false;">Kontakt</a> &nbsp;·&nbsp;
     <a href="#" onclick="showPage('mitglied');return false;">Mitglied werden</a> &nbsp;·&nbsp;
     <a href="#" onclick="showPage('st');return false;">Sisslerfeld-Tag 2026</a> &nbsp;·&nbsp;
     <a href="https://unser-sisslerfeld.ch" target="_blank">unser-sisslerfeld.ch</a>
@@ -1859,7 +1650,6 @@ function showPage(id) {
   document.querySelectorAll('.nav-links a').forEach(a => {
     a.classList.toggle('active', a.dataset.page === id);
   });
-  // Reset & re-trigger anims
   t && t.querySelectorAll('[data-anim]').forEach(el => el.classList.remove('in'));
   setTimeout(triggerAnims, 80);
   return false;
@@ -1894,31 +1684,21 @@ function triggerAnims() {
 }
 document.addEventListener('DOMContentLoaded', () => { setTimeout(triggerAnims, 80); });
 
-// ── COUNTER ANIMATION ──
-function animateCounters() {
-  document.querySelectorAll('.page.active .counter').forEach(el => {
-    if (el.dataset.done) return;
-    const target = +el.dataset.to;
-    let current = 0;
-    const step = Math.ceil(target / 40);
-    const timer = setInterval(() => {
-      current = Math.min(current + step, target);
-      el.textContent = current;
-      if (current >= target) { clearInterval(timer); el.dataset.done = 1; }
-    }, 30);
-  });
+// ── OK CHECKBOX: only visible for 'helfende Person' ──
+function toggleOkVisibility() {
+  const typ = document.getElementById('m-typ').value;
+  const card = document.getElementById('okCheckboxCard');
+  if (typ === 'helfer') {
+    card.style.display = 'flex';
+  } else {
+    card.style.display = 'none';
+    card.classList.remove('selected');
+  }
 }
-// trigger counters when stat strip is visible
-const obs = new IntersectionObserver((entries) => {
-  entries.forEach(e => { if(e.isIntersecting) animateCounters(); });
-}, {threshold:.3});
-document.querySelectorAll('.stat-strip').forEach(el => obs.observe(el));
-
-// ── FORM UTILS ──
-function submitForm(id) {
-  const el = document.getElementById(id);
-  if (el) { el.style.display = 'block'; setTimeout(() => el.style.display='none', 8000); }
-}
+// Init on page load
+document.addEventListener('DOMContentLoaded', () => {
+  toggleOkVisibility();
+});
 
 // ── CUSTOM OK CHECKBOX CARD ──
 function toggleOkCheckbox() {
@@ -1926,7 +1706,7 @@ function toggleOkCheckbox() {
   card.classList.toggle('selected');
 }
 
-// ── EMAIL SUBMISSIONS ──
+// ── MEMBERSHIP FORM ──
 function submitMembershipForm() {
   const vorname = document.getElementById('m-vorname').value.trim();
   const nachname = document.getElementById('m-nachname').value.trim();
@@ -1934,8 +1714,9 @@ function submitMembershipForm() {
   const gemeinde = document.getElementById('m-gemeinde').value.trim();
   const typSelect = document.getElementById('m-typ');
   const typ = typSelect.options[typSelect.selectedIndex].text;
+  const okCardVisible = document.getElementById('okCheckboxCard').style.display !== 'none';
   const okCardSelected = document.getElementById('okCheckboxCard').classList.contains('selected');
-  const okInteresse = okCardSelected ? "Ja, grosses Interesse am OK vorhanden" : "Nein, kein Interesse am OK";
+  const okInteresse = okCardVisible && okCardSelected ? "Ja, grosses Interesse am OK vorhanden" : "Nein";
   const nachricht = document.getElementById('m-nachricht').value.trim();
   const errorDiv = document.getElementById('m-validation-error');
 
@@ -1944,7 +1725,6 @@ function submitMembershipForm() {
     setTimeout(() => errorDiv.style.display = 'none', 6000);
     return;
   }
-  
   errorDiv.style.display = 'none';
 
   const subject = encodeURIComponent("Anmeldung Mitgliedschaft Unser Sisslerfeld: " + vorname + " " + nachname);
@@ -1955,7 +1735,7 @@ function submitMembershipForm() {
     "E-Mail: " + email + "\n" +
     "Gemeinde: " + gemeinde + "\n" +
     "Kategorie: " + typ + "\n" +
-    "Interesse am OK: " + okInteresse + "\n" +
+    (okCardVisible ? "Interesse am OK: " + okInteresse + "\n" : "") +
     "Nachricht: " + (nachricht ? nachricht : "Keine Nachricht hinterlassen")
   );
 
@@ -1963,7 +1743,7 @@ function submitMembershipForm() {
   submitForm('ms');
 }
 
-// ── CONTACT SUBMISSIONS ──
+// ── CONTACT FORM ──
 function submitContactForm() {
   const vorname = document.getElementById('k-vorname').value.trim();
   const nachname = document.getElementById('k-nachname').value.trim();
@@ -1977,7 +1757,6 @@ function submitContactForm() {
     setTimeout(() => errorDiv.style.display = 'none', 6000);
     return;
   }
-  
   errorDiv.style.display = 'none';
 
   const subject = encodeURIComponent("Kontaktanfrage Unser Sisslerfeld: " + (betreff ? betreff : "Kein Betreff"));
@@ -1990,6 +1769,11 @@ function submitContactForm() {
 
   window.location.href = "mailto:alessioporriciello@gmail.com?subject=" + subject + "&body=" + body;
   submitForm('ks');
+}
+
+function submitForm(id) {
+  const el = document.getElementById(id);
+  if (el) { el.style.display = 'block'; setTimeout(() => el.style.display='none', 8000); }
 }
 </script>
 </body>
