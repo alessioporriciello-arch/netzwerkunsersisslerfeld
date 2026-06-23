@@ -166,7 +166,7 @@ nav.scrolled{box-shadow:0 4px 30px rgba(0,0,0,0.08);}
 }
 .hero h1{
   font-family:var(--font-d);color:var(--white);
-  font-size:clamp(2.5rem, 6vw, 5.5rem);line-height:1.06;
+  font-size:clamp(2.8rem,7vw,5.5rem);line-height:1.06;
   margin-bottom:1.5rem;position:relative;
   opacity:0;animation:fadeUp .9s .4s forwards;
   text-shadow: 0 2px 10px rgba(0,0,0,0.7);
@@ -372,7 +372,7 @@ section{padding:5.5rem 2rem;}
 .prog-time.blue-time{color:var(--blue);}
 .prog-dot-wrap{display:flex;flex-direction:column;align-items:center;gap:4px;padding-top:5px;}
 .prog-dot{width:10px;height:10px;border-radius:50%;background:var(--blue);flex-shrink:0;}
-.prog-dot.navy-dot{background:var(--navy);}
+.prog-dot.black-dot{background:#000000 !important;}
 .prog-line{width:2px;flex:1;background:rgba(18,142,214,.2);}
 .prog-content{}
 .prog-event{font-weight:700;font-size:.95rem;color:var(--dark);}
@@ -400,48 +400,6 @@ section{padding:5.5rem 2rem;}
 }
 .coming-soon-box p{
   color:#777;font-size:.9rem;line-height:1.7;max-width:400px;margin:0 auto;
-}
-
-/* OK Section style stays for general purpose of team representation on other views */
-.ok-section{background:var(--navy);padding:5rem 2rem;}
-.ok-groups-container{
-  display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));
-  gap:2.2rem;margin-top:3rem;
-}
-.ok-group-card{
-  background:rgba(255,255,255,0.03);
-  border:1px solid rgba(255,255,255,.08);
-  border-top:4px solid var(--lightblue);
-  border-radius:12px;padding:1.8rem 1.5rem;
-  box-shadow:0 8px 32px rgba(0,0,0,0.15);
-}
-.ok-group-card h3{
-  font-family:var(--font-d);font-size:1.25rem;color:var(--white);
-  margin-bottom:1.5rem;border-bottom:1px solid rgba(255,255,255,0.1);
-  padding-bottom:.6rem;letter-spacing:.02em;
-}
-.ok-members-flex{
-  display:flex;flex-direction:column;gap:1.4rem;
-}
-.ok-member-row{
-  display:flex;align-items:center;gap:1rem;
-}
-.ok-avatar-circle{
-  width:50px;height:50px;border-radius:50%;
-  background:linear-gradient(135deg, rgba(255,255,255,0.15) 0%, rgba(255,255,255,0.02) 100%);
-  border:1px solid rgba(255,255,255,0.25);
-  display:flex;align-items:center;justify-content:center;
-  color:var(--lightblue);font-size:1rem;font-weight:700;flex-shrink:0;
-  box-shadow:0 4px 10px rgba(0,0,0,0.1);
-}
-.ok-member-row:hover .ok-avatar-circle{
-  background:var(--blue);color:var(--white);border-color:var(--blue);
-}
-.ok-details{
-  display:flex;flex-direction:column;
-}
-.ok-details .name{
-  color:var(--white);font-weight:600;font-size:1rem;line-height:1.2;
 }
 
 /* Sponsors */
@@ -783,7 +741,7 @@ section{padding:5.5rem 2rem;}
   text-decoration:none;font-size:.9rem;font-weight:500;
   transition:color .2s;
 }
-.kl:hover{color:var(--blue);}
+.kl:hover { color: var(--blue); }
 .kl-icon{
   width:38px;height:38px;border-radius:50%;background:#dde9f0;
   display:flex;align-items:center;justify-content:center;
@@ -869,9 +827,8 @@ footer p{color:rgba(255,255,255,.5);}
   }
   section{padding:3.5rem 1.2rem;}
   .home-combined{padding:3.5rem 1.2rem;}
-  .nav-logo-text { display: none; } /* Verhindert hässliche Umbrüche auf schmalen Screens */
+  .nav-logo-text { display: none; }
   
-  /* Verhindert das Zusammenquetschen auf mobilen Geräten */
   .timeline-section .two {
     display: flex;
     flex-direction: column-reverse;
@@ -974,7 +931,9 @@ footer p{color:rgba(255,255,255,.5);}
     </div>
   </div>
 
-</div><div id="page-st" class="page">
+</div>
+
+<div id="page-st" class="page">
 
   <div class="st-hero">
     <p class="sec-label" data-anim>12. September 2026 · Münchwilen</p>
@@ -1035,7 +994,7 @@ footer p{color:rgba(255,255,255,.5);}
               </div>
               <div class="prog-item" style="border-bottom:none;">
                 <div class="prog-time blue-time">16:45</div>
-                <div class="prog-dot-wrap"><div class="prog-dot" style="background:var(--red);"></div></div>
+                <div class="prog-dot-wrap"><div class="prog-dot"></div></div>
                 <div class="prog-content">
                   <div class="prog-event">Rangverkündigung Stiefelweitwurf</div>
                   <div class="prog-sub">Wer wirft am weitesten?</div>
@@ -1049,7 +1008,7 @@ footer p{color:rgba(255,255,255,.5);}
             <div class="prog-wrap">
               <div class="prog-item">
                 <div class="prog-time">17:00</div>
-                <div class="prog-dot-wrap"><div class="prog-dot navy-dot"></div><div class="prog-line"></div></div>
+                <div class="prog-dot-wrap"><div class="prog-dot black-dot"></div><div class="prog-line"></div></div>
                 <div class="prog-content">
                   <div class="prog-event">Begrüssung</div>
                   <div class="prog-sub">Durch den Verein und die Gemeinde</div>
@@ -1057,7 +1016,7 @@ footer p{color:rgba(255,255,255,.5);}
               </div>
               <div class="prog-item">
                 <div class="prog-time">17:45</div>
-                <div class="prog-dot-wrap"><div class="prog-dot navy-dot"></div><div class="prog-line"></div></div>
+                <div class="prog-dot-wrap"><div class="prog-dot_wrap"><div class="prog-dot black-dot"></div><div class="prog-line"></div></div>
                 <div class="prog-content">
                   <div class="prog-event">Ansprache Daniel Erne</div>
                   <div class="prog-sub">Worte zur Region und zur Entwicklung des Sisslerfelds</div>
@@ -1065,7 +1024,7 @@ footer p{color:rgba(255,255,255,.5);}
               </div>
               <div class="prog-item">
                 <div class="prog-time">18:15</div>
-                <div class="prog-dot-wrap"><div class="prog-dot navy-dot"></div><div class="prog-line"></div></div>
+                <div class="prog-dot-wrap"><div class="prog-dot black-dot"></div><div class="prog-line"></div></div>
                 <div class="prog-content">
                   <div class="prog-event">Schlag den Regierungsrat</div>
                   <div class="prog-sub">Mit Dieter Egli</div>
@@ -1073,7 +1032,7 @@ footer p{color:rgba(255,255,255,.5);}
               </div>
               <div class="prog-item">
                 <div class="prog-time">19:00</div>
-                <div class="prog-dot-wrap"><div class="prog-dot navy-dot"></div><div class="prog-line"></div></div>
+                <div class="prog-dot-wrap"><div class="prog-dot black-dot"></div><div class="prog-line"></div></div>
                 <div class="prog-content">
                   <div class="prog-event">Songquiz</div>
                   <div class="prog-sub">Publikum gesucht – testet euer Musikwissen</div>
@@ -1081,7 +1040,7 @@ footer p{color:rgba(255,255,255,.5);}
               </div>
               <div class="prog-item" style="border-bottom:none;">
                 <div class="prog-time">19:45</div>
-                <div class="prog-dot-wrap"><div class="prog-dot" style="background:var(--red);"></div></div>
+                <div class="prog-dot-wrap"><div class="prog-dot black-dot"></div></div>
                 <div class="prog-content">
                   <div class="prog-event">Band: Frisch</div>
                   <div class="prog-sub">Live-Musik – bekannt vom Sisslerfeld-Tag 2024</div>
@@ -1206,7 +1165,9 @@ footer p{color:rgba(255,255,255,.5);}
     </div>
   </div>
 
-</div><div id="page-uu" class="page">
+</div>
+
+<div id="page-uu" class="page">
 
   <div class="uu-hero">
     <p class="sec-label" data-anim>Wer wir sind</p>
@@ -1234,7 +1195,7 @@ footer p{color:rgba(255,255,255,.5);}
         </div>
       </div>
       <div style="margin-top:2rem;padding:1.4rem;background:var(--white);border-radius:8px;border-left:4px solid var(--blue);box-shadow:0 4px 16px rgba(0,0,0,.06);" data-anim="scale">
-        <p style="font-size:.82rem;color:var(--blue);font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin-bottom:.5rem;">Mandat &amp; Finanzen</p>
+        <p style="font-size:.82rem;color(--blue);font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin-bottom:.5rem;">Mandat &amp; Finanzen</p>
         <p style="font-size:.88rem;color:#555;line-height:1.75;">Das Koordinationsmandat umfasst ca. 240 Stunden/Jahr. Die jährlichen Kosten von CHF 8'400 werden solidarisch auf die vier Gemeinden und den Kanton aufgeteilt (<strong>CHF 1'680 pro Partei</strong>).</p>
       </div>
     </div>
@@ -1410,7 +1371,7 @@ footer p{color:rgba(255,255,255,.5);}
             <div class="proj-text-content">
               <div class="proj-by">Alessio Porriciello · Marcel Notter</div>
               <h3>5-Gemeinden-Park &amp; Familientreffpunkt</h3>
-              <p>Fünf formschöne Sitzbänke aus Granit mit eingravierten Gemeindewappen verbinden die Sisslerfeld-Gemeinden symbolisch. Gefertigt wurden sie grenzüberschreitend von engagierten Schreiner-Lernenden aus Bad Säckingen. Direkt daneben lädt eine naturnahe Begegnungszone mit gemütlicher Feuerstelle, Grillmöglichkeiten und komfortablen Sitzbänken am idyllischen Rheinufer Familien und Wanderer zum Verweilen ein. Über eine wetterfeste, digitale Spielkiste mit App-Steuerung können zudem Sportgeräte wie Bälle, Badminton und Boccia personalfrei ausgeliehen werden.</p>
+              <p>Fünf formschöne Sitzbänke aus Granit mit eingravierten Gemeindewappen verbinden die Sisslerfeld-Gemeinden symbolisch. Gefertigt wurden sie grenzüberschreitend von engagierten Schreiner-Lernenden aus Bad Säckingen. Direkt daneben lädt eine naturnahe Begegnungszone mit gemütlicher Feuerstelle, Grillmöglichkeiten und komfortablen Sitzbänken am idyllischen Rheinufer Familien und Wanderer zum Verweilen ein. Über eine wetterfeste, digitale Spielkiste mit App-Steuerung können zudem Sportgeräte wie Bälle, Badminton and Boccia personalfrei ausgeliehen werden.</p>
               <p style="margin-top:.6rem;font-size:.82rem;color:#888;">📍 Sisseln, Eichenallee zum Rhein</p>
             </div>
             <span class="proj-badge badge-done">Realisiert &amp; Eröffnet 2025</span>
@@ -1581,7 +1542,9 @@ footer p{color:rgba(255,255,255,.5);}
       </div>
     </div>
   </section>
-</div><div id="page-impressum" class="page">
+</div>
+
+<div id="page-impressum" class="page">
   <div class="k-hero" style="background: var(--bg); padding: 5.5rem 2rem 3rem; text-align: center;">
     <p class="sec-label" data-anim>Rechtliche Angaben</p>
     <h1 class="sec-title" data-anim data-delay="1" style="margin-bottom:1.5rem;">Impressum</h1>
@@ -1590,44 +1553,60 @@ footer p{color:rgba(255,255,255,.5);}
   <section style="background: var(--white); padding: 4rem 2rem;">
     <div class="container" style="max-width: 800px; line-height: 1.8;">
       <div style="background: var(--bg); padding: 3rem; border-radius: 12px; box-shadow: 0 4px 28px rgba(0,0,0,0.04); margin-bottom: 3rem;" data-anim="scale">
-        <h3 style="font-family: var(--font-d); color: var(--navy); margin-bottom: 1rem; font-size: 1.4rem;">Vereinsadresse</h3>
+        
+        <div style="text-align: center; margin-bottom: 2.5rem;">
+          <img src="img/logo.png" alt="Netzwerk unser Sisslerfeld Logo" style="max-height: 80px; width: auto; object-fit: contain;">
+        </div>
+
+        <h3 style="font-family: var(--font-d); color: var(--navy); margin-bottom: 1rem; font-size: 1.4rem;">Vereinsadresse &amp; Kontakt</h3>
         <p style="margin-bottom: 2rem;">
-          <strong>Verein Netzwerk Unser Sisslerfeld</strong><br>
-          Münchwilen<br>
-          Schweiz
+          <strong>Netzwerk unser Sisslerfeld</strong><br>
+          Schaffhauserstrasse 14<br>
+          4332 Stein<br>
+          Schweiz<br><br>
+          E-Mail: <a href="mailto:info@netzwerksisslerfeld.ch" style="color: var(--blue); text-decoration: none; font-weight: bold;">info@netzwerksisslerfeld.ch</a>
+        </p>
+
+        <h3 style="font-family: var(--font-d); color: var(--navy); margin-bottom: 1rem; font-size: 1.4rem;">Rechtsform &amp; Zweck</h3>
+        <p style="margin-bottom: 2rem; font-size: 0.95rem; color: #444;">
+          Das Netzwerk unser Sisslerfeld ist ein Verein im Sinne von Art. 60 ff. des Schweizerischen Zivilgesetzbuches (ZGB). Der Verein bezweckt die Koordination und Umsetzung gemeinnütziger und regionaler Projekte sowie die Stärkung des kulturellen Austauschs und der Gemeinschaft im Einzugsgebiet des Sisslerfelds.
         </p>
 
         <h3 style="font-family: var(--font-d); color: var(--navy); margin-bottom: 1rem; font-size: 1.4rem;">Vertretungsberechtigte Personen</h3>
-        <p style="margin-bottom: 2rem;">
-          Vorstand des Vereins Netzwerk Unser Sisslerfeld
+        <p style="margin-bottom: 2rem; font-size: 0.95rem; color: #444;">
+          Der Verein wird gemeinschaftlich durch den gewählten Vorstand vertreten.
         </p>
 
-        <h3 style="font-family: var(--font-d); color: var(--navy); margin-bottom: 1rem; font-size: 1.4rem;">Kontakt</h3>
-        <p style="margin-bottom: 2rem;">
-          E-Mail: <a href="mailto:info@netzwerksisslerfeld.ch" style="color: var(--blue); text-decoration: none; font-weight: bold;">info@netzwerksisslerfeld.ch</a><br>
-          Webseite: <a href="https://unser-sisslerfeld.ch" target="_blank" style="color: var(--blue); text-decoration: none;">unser-sisslerfeld.ch</a>
+        <h3 style="font-family: var(--font-d); color: var(--navy); margin-bottom: 1rem; font-size: 1.4rem;">Handelsregister &amp; MWST</h3>
+        <p style="margin-bottom: 2rem; font-size: 0.95rem; color: #444;">
+          Als nicht-wirtschaftlicher Verein, der kein kaufmännisches Gewerbe betreibt, ist das Netzwerk unser Sisslerfeld von der Pflicht zur Eintragung in das Handelsregister befreit. Aufgrund des gemeinnützigen Charakters und des aktuellen Jahresumsatzes besteht zudem keine Mehrwertsteuerpflicht (MWST-Befreiung).
+        </p>
+
+        <h3 style="font-family: var(--font-d); color: var(--navy); margin-bottom: 1rem; font-size: 1.4rem;">Widerrufsrecht bei Online-Anmeldungen</h3>
+        <p style="margin-bottom: 2rem; font-size: 0.95rem; color: #444;">
+          Nach Schweizerischem Obligationenrecht (OR) besteht bei im Internet abgeschlossenen Verträgen kein generelles gesetzliches Widerrufsrecht. Der Verein gewährt jedoch im Sinne der Transparenz freiwillig ein <b>14-tägiges Widerrufsrecht</b> ab dem Tag der Online-Übermittlung eines Mitgliedschaftsantrags. Ein solcher Widerruf kann ohne Angabe von Gründen formlos per E-Mail an <b>info@netzwerksisslerfeld.ch</b> gerichtet werden. Die reguläre Kündigung oder der Austritt aus dem Verein richtet sich nach den offiziellen Vereinsstatuten und ist jeweils per Ende eines Vereinsjahres möglich.
         </p>
 
         <h3 style="font-family: var(--font-d); color: var(--navy); margin-bottom: 1rem; font-size: 1.4rem;">Haftungsausschluss</h3>
         <p style="margin-bottom: 2rem; font-size: 0.9rem; color: #555;">
-          Der Autor übernimmt keinerlei Gewähr hinsichtlich der inhaltlichen Richtigkeit, Genauigkeit, Aktualität, Zuverlässigkeit und Vollständigkeit der Informationen.
-          Haftungsansprüche gegen den Autor wegen Schäden materieller oder immaterieller Art, welche aus dem Zugriff oder der Nutzung bzw. Nichtnutzung der veröffentlichten Informationen, durch Missbrauch der Verbindung oder durch technische Störungen entstanden sind, werden ausgeschlossen.
-          Alle Angebote sind unverbindlich. Der Autor behält es sich ausdrücklich vor, Teile der Seiten oder das gesamte Angebot ohne gesonderte Ankündigung zu verändern, zu ergänzen, zu löschen oder die Veröffentlichung zeitweise oder endgültig einzustellen.
+          Der Verein übernimmt keinerlei Gewähr hinsichtlich der inhaltlichen Richtigkeit, Genauigkeit, Aktualität, Zuverlässigkeit und Vollständigkeit der Informationen auf dieser Webseite. Haftungsansprüche gegen den Verein wegen Schäden materieller oder immaterieller Art, welche aus dem Zugriff oder der Nutzung bzw. Nichtnutzung der veröffentlichten Informationen, durch Missbrauch der Verbindung oder durch technische Störungen entstanden sind, werden ausdrücklich ausgeschlossen. Alle Angebote sind unverbindlich.
         </p>
 
         <h3 style="font-family: var(--font-d); color: var(--navy); margin-bottom: 1rem; font-size: 1.4rem;">Haftungsausschluss für Links</h3>
         <p style="margin-bottom: 2rem; font-size: 0.9rem; color: #555;">
-          Verweise und Links auf Webseiten Dritter liegen ausserhalb unseres Verantwortungsbereichs. Es wird jegliche Verantwortung für solche Webseiten abgelehnt. Der Zugriff und die Nutzung solcher Webseiten erfolgen auf eigene Gefahr des jeweiligen Nutzers.
+          Verweise und Links auf Webseiten Dritter liegen ausserhalb des Verantwortungsbereichs des Vereins. Es wird jegliche Verantwortung für Inhalte oder Angebote auf solchen Webseiten abgelehnt. Der Zugriff und die Nutzung erfolgen vollständig auf eigene Gefahr des jeweiligen Nutzers.
         </p>
 
         <h3 style="font-family: var(--font-d); color: var(--navy); margin-bottom: 1rem; font-size: 1.4rem;">Urheberrechte</h3>
         <p style="font-size: 0.9rem; color: #555;">
-          Die Urheber- und alle anderen Rechte an Inhalten, Bildern, Fotos oder anderen Dateien auf dieser Website gehören ausschliesslich dem Verein Netzwerk Unser Sisslerfeld oder den speziell genannten Rechtsinhabern. Für die Reproduktion jeglicher Elemente ist die schriftliche Zustimmung der Urheberrechtsträger im Voraus einzuholen.
+          Die Urheber- und alle anderen Rechte an Inhalten, Bildern, Logos, Fotos oder anderen Dateien auf dieser Website gehören ausschliesslich dem <b>Verein Netzwerk unser Sisslerfeld</b> oder den speziell genannten Rechtsinhabern. Für die Reproduktion, Bearbeitung oder Weiterverbreitung jeglicher Elemente ist die schriftliche Zustimmung der Urheberrechtsträger im Voraus einzuholen.
         </p>
       </div>
     </div>
   </section>
-</div><footer>
+</div>
+
+<footer>
   <div class="ft-top">
     <a class="ft-soc ft-soc-facebook" href="https://www.facebook.com/profile.php?id=61558378316151" target="_blank">
       <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c4.56-.93 8-4.96 8-9.75z"/></svg>
@@ -1641,16 +1620,32 @@ footer p{color:rgba(255,255,255,.5);}
     <a href="#" onclick="showPage('kontakt');return false;">Kontakt</a> &nbsp;·&nbsp;
     <a href="#" onclick="showPage('mitglied');return false;">Mitglied werden</a> &nbsp;·&nbsp;
     <a href="#" onclick="showPage('st');return false;">Sisslerfeld-Tag 2026</a> &nbsp;·&nbsp;
-    <a href="#" onclick="showPage('impressum');return false;">Impressum</a> &nbsp;·&nbsp;
-    <a href="https://unser-sisslerfeld.ch" target="_blank">unser-sisslerfeld.ch</a>
+    <a href="#" onclick="showPage('impressum');return false;">Impressum</a>
   </p>
   <p style="font-size:.73rem;color:rgba(255,255,255,.4);">© 2026 Netzwerk Unser Sisslerfeld</p>
 </footer>
 
 
 <script>
-// ── FORMSPREE CONFIGURATION ──
-const FORMSPREE_ENDPOINT = "https://formspree.io/f/xykqzdbr";
+// Spinner CSS inject styling dynamically
+const spinnerStyle = document.createElement('style');
+spinnerStyle.textContent = `
+.loading-spinner {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  border: 2px solid rgba(255,255,255,0.3);
+  border-radius: 50%;
+  border-top-color: #fff;
+  animation: spin 1s ease-in-out infinite;
+  margin-right: 8px;
+  vertical-align: middle;
+}
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+`;
+document.head.appendChild(spinnerStyle);
 
 // ── PAGE ROUTER ──
 function showPage(id) {
@@ -1743,7 +1738,6 @@ function submitMembershipForm() {
   btnEl.disabled = true;
   btnEl.innerHTML = '<span class="loading-spinner"></span> Wird gesendet...';
 
-  // Sende Daten direkt via Formspree API im Hintergrund ab
   fetch(FORMSPREE_ENDPOINT, {
     method: 'POST',
     headers: {
@@ -1808,7 +1802,6 @@ function submitContactForm() {
   btnEl.disabled = true;
   btnEl.innerHTML = '<span class="loading-spinner"></span> Wird gesendet...';
 
-  // Sende Daten direkt via Formspree API im Hintergrund ab
   fetch(FORMSPREE_ENDPOINT, {
     method: 'POST',
     headers: {
