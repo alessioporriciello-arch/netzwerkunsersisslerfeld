@@ -59,7 +59,7 @@ nav.scrolled{box-shadow:0 4px 30px rgba(0,0,0,0.08);}
   font-size: 0.95rem;
   font-weight: 700;
   color: var(--navy);
-  margin-left: 1.5rem; /* Minimal nach rechts verschoben */
+  margin-left: 1.5rem;
   letter-spacing: 0.03em;
   text-transform: uppercase;
 }
@@ -523,7 +523,7 @@ section{padding:5.5rem 2rem;}
 }
 .uu-hero .sec-label{color:var(--lightblue); text-shadow: 0 1px 3px rgba(0,0,0,0.5);}
 .uu-hero h1{font-family:var(--font-d);font-size:clamp(2.2rem,5vw,4rem);color:var(--white);line-height:1.1;margin-bottom:1rem; text-shadow: 0 2px 8px rgba(0,0,0,0.5);}
-.uu-hero p{color:rgba(255,255,255,.9);max-width:560px;line-height:1.85;font-size:1rem; text-shadow: 0 1px 5px rgba(0,0,0,0.5);}
+.uu-hero p{color:rgba(255,255,255,.9);max-width:560px;line-height:1.85;font-size:1rem; text-shadow: 0 2px 6px rgba(0,0,0,0.8);}
 
 /* Founding story */
 .founding{background:var(--bg);padding:5.5rem 2rem;}
@@ -833,7 +833,7 @@ footer{
 .ft-soc{
   width:38px;height:38px;border-radius:50%;
   display:flex;align-items:center;justify-content:center;
-  color:rgba(255,255,255,.7);text-decoration:none;font-size:.9rem;
+  color:var(--white);text-decoration:none;font-size:.9rem;
   transition:transform .2s, opacity .2s;
 }
 .ft-soc svg { display: block; }
@@ -841,11 +841,11 @@ footer strong{color:rgba(255,255,255,.9);}
 footer a{color:var(--lightblue);text-decoration:none;}
 footer p{color:rgba(255,255,255,.5);}
 
-/* Footer social logos with color */
-.ft-fb-icon { color: #1877f2; }
-.ft-ig-icon { color: #e1306c; }
-.ft-soc:hover .ft-fb-icon,
-.ft-soc:hover .ft-ig-icon { color: var(--white); }
+/* Footer social logos with true brand colors */
+.ft-soc-facebook { background: #1877f2; }
+.ft-soc-facebook:hover { background: #145dbf; transform: scale(1.05); }
+.ft-soc-instagram { background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%); }
+.ft-soc-instagram:hover { opacity: 0.9; transform: scale(1.05); }
 
 /* ── RESPONSIVE ── */
 @media(max-width:900px){
@@ -869,9 +869,9 @@ footer p{color:rgba(255,255,255,.5);}
   }
   section{padding:3.5rem 1.2rem;}
   .home-combined{padding:3.5rem 1.2rem;}
-  .nav-logo-text { display: none; } /* Hide text on small mobile screens to prevent wrapping */
+  .nav-logo-text { display: none; } /* Verhindert hässliche Umbrüche auf schmalen Screens */
   
-  /* Reset timeline side layout on mobile to prevent squishing */
+  /* Verhindert das Zusammenquetschen auf mobilen Geräten */
   .timeline-section .two {
     display: flex;
     flex-direction: column-reverse;
@@ -888,7 +888,6 @@ footer p{color:rgba(255,255,255,.5);}
 </head>
 <body>
 
-<!-- NAV -->
 <nav id="mainNav">
   <div class="nav-logo" onclick="showPage('home')">
     <img src="img/logo.png" alt="Netzwerk Unser Sisslerfeld" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-block';">
@@ -915,9 +914,6 @@ footer p{color:rgba(255,255,255,.5);}
   <a href="#" onclick="showPage('kontakt');closeMenu();return false;">Kontakt</a>
 </div>
 
-<!-- ═════════════════════════════════
-     HOME
-═════════════════════════════════ -->
 <div id="page-home" class="page active">
 
   <div class="hero">
@@ -938,11 +934,9 @@ footer p{color:rgba(255,255,255,.5);}
     <div class="scroll-line"></div>
   </div>
 
-  <!-- Combined Teaser + Features side by side -->
   <div class="home-combined">
     <div class="home-combined-grid">
 
-      <!-- Left: Event teaser -->
       <div data-anim="left">
         <p class="sec-label">12. September 2026</p>
         <h2 class="sec-title">Der 4. Sisslerfeld-Tag in Münchwilen</h2>
@@ -951,7 +945,6 @@ footer p{color:rgba(255,255,255,.5);}
         <button class="btn btn-navy" style="margin-top:1.8rem;" onclick="showPage('st')">Mehr erfahren →</button>
       </div>
 
-      <!-- Right: Features -->
       <div class="home-features-right" data-anim="right">
         <h3 class="home-features-title">Netzwerk unser Sisslerfeld</h3>
         
@@ -969,7 +962,7 @@ footer p{color:rgba(255,255,255,.5);}
             <p>Von Gemeinschaftsgärten bis Wildbienentrails – wir setzen Ideen um, die bleiben.</p>
           </div>
         </div>
-        <div class="home-feature-item" data-anim data-delay="3">
+        <div class="home-feature-item" data-anim="3" data-delay="3">
           <div class="home-feature-icon">🤝</div>
           <div class="home-feature-text">
             <h4>Vernetzung</h4>
@@ -981,13 +974,7 @@ footer p{color:rgba(255,255,255,.5);}
     </div>
   </div>
 
-</div><!-- /home -->
-
-
-<!-- ═════════════════════════════════
-     SISSLERFELD-TAG
-═════════════════════════════════ -->
-<div id="page-st" class="page">
+</div><div id="page-st" class="page">
 
   <div class="st-hero">
     <p class="sec-label" data-anim>12. September 2026 · Münchwilen</p>
@@ -999,12 +986,10 @@ footer p{color:rgba(255,255,255,.5);}
     </div>
   </div>
 
-  <!-- Programm -->
   <section>
     <div class="container">
       <div class="two">
 
-        <!-- Flyer -->
         <div data-anim="left">
           <p class="sec-label">Veranstaltungsflyer</p>
           <div class="flyer-ph">
@@ -1020,13 +1005,11 @@ footer p{color:rgba(255,255,255,.5);}
           </div>
         </div>
 
-        <!-- Programm -->
         <div data-anim="right">
           <p class="sec-label">Tagesprogramm</p>
           <h2 class="sec-title">Was euch erwartet</h2>
           <div class="rule"></div>
 
-          <!-- Block 1: Stiefelweitwurf & Firmenwanderung -->
           <div class="prog-block wanderung-block">
             <div class="prog-section-label wanderung">🥾 Stiefelweitwurf &amp; Firmenwanderung</div>
             <div class="prog-wrap">
@@ -1061,7 +1044,6 @@ footer p{color:rgba(255,255,255,.5);}
             </div>
           </div>
 
-          <!-- Block 2: Rahmenprogramm -->
           <div class="prog-block rahmen-block">
             <div class="prog-section-label rahmen">🎪 Rahmenprogramm auf dem Festgelände</div>
             <div class="prog-wrap">
@@ -1113,7 +1095,6 @@ footer p{color:rgba(255,255,255,.5);}
     </div>
   </section>
 
-  <!-- Rundweg: Coming Soon -->
   <section style="background:var(--bg);">
     <div class="container">
       <p class="sec-label" data-anim>Rundweg durch das Sisslerfeld</p>
@@ -1129,7 +1110,6 @@ footer p{color:rgba(255,255,255,.5);}
     </div>
   </section>
 
-  <!-- Sponsoren -->
   <div class="sponsors">
     <div class="container" style="text-align:center;">
       <p class="sec-label" data-anim>Partner &amp; Gönner</p>
@@ -1137,7 +1117,6 @@ footer p{color:rgba(255,255,255,.5);}
       <div class="rule c" data-anim data-delay="2"></div>
       <p style="color:#555;font-size:.9rem;margin-bottom:3rem;" data-anim data-delay="2">Wir danken unseren Partnern und Sponsoren von Herzen für ihre wertvolle Unterstützung.</p>
       
-      <!-- Hauptsponsor (PLATIN-Partner) -->
       <div class="sponsor-tier" data-anim>
         <div class="tier-header">
           <div class="tier-line"></div>
@@ -1154,7 +1133,6 @@ footer p{color:rgba(255,255,255,.5);}
         </div>
       </div>
 
-      <!-- Nebensponsoren (GOLD-Partner) -->
       <div class="sponsor-tier" data-anim>
         <div class="tier-header">
           <div class="tier-line"></div>
@@ -1186,7 +1164,6 @@ footer p{color:rgba(255,255,255,.5);}
         </div>
       </div>
 
-      <!-- Gönner (SILBER-Partner) -->
       <div class="sponsor-tier" data-anim>
         <div class="tier-header">
           <div class="tier-line"></div>
@@ -1205,7 +1182,6 @@ footer p{color:rgba(255,255,255,.5);}
         </div>
       </div>
 
-      <!-- Unterstützer (BRONZE-Partner) -->
       <div class="sponsor-tier" data-anim>
         <div class="tier-header">
           <div class="tier-line"></div>
@@ -1230,13 +1206,7 @@ footer p{color:rgba(255,255,255,.5);}
     </div>
   </div>
 
-</div><!-- /st -->
-
-
-<!-- ═════════════════════════════════
-     ÜBER UNS
-═════════════════════════════════ -->
-<div id="page-uu" class="page">
+</div><div id="page-uu" class="page">
 
   <div class="uu-hero">
     <p class="sec-label" data-anim>Wer wir sind</p>
@@ -1245,7 +1215,6 @@ footer p{color:rgba(255,255,255,.5);}
     <p data-anim data-delay="2">Gegründet im April 2024 – aus der Region, für die Region.</p>
   </div>
 
-  <!-- Founding Story -->
   <div class="founding">
     <div class="container">
       <div class="founding-grid">
@@ -1271,7 +1240,6 @@ footer p{color:rgba(255,255,255,.5);}
     </div>
   </div>
 
-  <!-- Mission / Zweck — 3 boxes -->
   <div class="zweck-section">
     <div class="container">
       <p class="sec-label" data-anim style="color:var(--lightblue);">Vereinszweck</p>
@@ -1297,7 +1265,6 @@ footer p{color:rgba(255,255,255,.5);}
     </div>
   </div>
 
-  <!-- Timeline -->
   <div class="timeline-section">
     <div class="container">
       <div class="two">
@@ -1369,7 +1336,6 @@ footer p{color:rgba(255,255,255,.5);}
           </div>
         </div>
         
-        <!-- Side area (Integrated Images "park" and "zelt" on the right sidebar) -->
         <div style="display:flex;flex-direction:column;gap:1.5rem;padding-top:5rem;" data-anim="right">
           <div class="tl-image-box">
             <img src="img/park.jpg" alt="Gemeinden-Park & Familientreffpunkt" style="width:100%;height:100%;object-fit:cover;" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
@@ -1393,7 +1359,6 @@ footer p{color:rgba(255,255,255,.5);}
     </div>
   </div>
 
-  <!-- Gemeinden -->
   <div class="gemeinden">
     <div class="container" style="text-align:center;">
       <p class="sec-label" data-anim>Unser Einzugsgebiet</p>
@@ -1420,13 +1385,7 @@ footer p{color:rgba(255,255,255,.5);}
     </div>
   </div>
 
-</div><!-- /uu -->
-
-
-<!-- ═════════════════════════════════
-     PROJEKTE
-═════════════════════════════════ -->
-<div id="page-projekte" class="page">
+</div><div id="page-projekte" class="page">
 
   <div class="proj-hero">
     <p class="sec-label" data-anim>Was wir bewegen</p>
@@ -1515,13 +1474,7 @@ footer p{color:rgba(255,255,255,.5);}
     </div>
   </section>
 
-</div><!-- /projekte -->
-
-
-<!-- ═════════════════════════════════
-     MITGLIED
-═════════════════════════════════ -->
-<div id="page-mitglied" class="page">
+</div><div id="page-mitglied" class="page">
 
   <div class="member-hero">
     <p class="sec-label" style="color:var(--lightblue);" data-anim>Mach mit</p>
@@ -1557,7 +1510,6 @@ footer p{color:rgba(255,255,255,.5);}
         <div class="fg"><label>E-Mail *</label><input type="email" id="m-email" placeholder="max@beispiel.ch"></div>
         <div class="fg"><label>Gemeinde</label><input type="text" id="m-gemeinde" placeholder="z.B. Münchwilen, Sisseln, …"></div>
         
-        <!-- Interactive Membership Select -->
         <div class="fg">
           <label>Gewünschte Mitgliedschafts-Art</label>
           <select id="m-typ" onchange="toggleOkVisibility()">
@@ -1566,7 +1518,6 @@ footer p{color:rgba(255,255,255,.5);}
           </select>
         </div>
 
-        <!-- OK Checkbox: only shown for 'helfende Person' -->
         <div class="checkbox-card" id="okCheckboxCard" onclick="toggleOkCheckbox()">
           <div class="custom-box">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
@@ -1585,13 +1536,7 @@ footer p{color:rgba(255,255,255,.5);}
     </div>
   </div>
 
-</div><!-- /mitglied -->
-
-
-<!-- ═════════════════════════════════
-     KONTAKT
-═════════════════════════════════ -->
-<div id="page-kontakt" class="page">
+</div><div id="page-kontakt" class="page">
   <section class="k-hero">
     <div class="container">
       <p class="sec-label" data-anim>Wir sind für dich da</p>
@@ -1636,13 +1581,7 @@ footer p{color:rgba(255,255,255,.5);}
       </div>
     </div>
   </section>
-</div><!-- /kontakt -->
-
-
-<!-- ═════════════════════════════════
-     IMPRESSUM
-═════════════════════════════════ -->
-<div id="page-impressum" class="page">
+</div><div id="page-impressum" class="page">
   <div class="k-hero" style="background: var(--bg); padding: 5.5rem 2rem 3rem; text-align: center;">
     <p class="sec-label" data-anim>Rechtliche Angaben</p>
     <h1 class="sec-title" data-anim data-delay="1" style="margin-bottom:1.5rem;">Impressum</h1>
@@ -1688,17 +1627,13 @@ footer p{color:rgba(255,255,255,.5);}
       </div>
     </div>
   </section>
-</div><!-- /impressum -->
-
-
-<!-- FOOTER -->
-<footer>
+</div><footer>
   <div class="ft-top">
-    <a class="ft-soc" href="https://www.facebook.com/profile.php?id=61558378316151" target="_blank" style="background:#1877f2;">
-      <svg class="ft-fb-icon" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c4.56-.93 8-4.96 8-9.75z"/></svg>
+    <a class="ft-soc ft-soc-facebook" href="https://www.facebook.com/profile.php?id=61558378316151" target="_blank">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c4.56-.93 8-4.96 8-9.75z"/></svg>
     </a>
-    <a class="ft-soc" href="https://www.instagram.com/netzwerk_unser_sisslerfeld/" target="_blank" style="background:radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%);">
-      <svg class="ft-ig-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+    <a class="ft-soc ft-soc-instagram" href="https://www.instagram.com/netzwerk_unser_sisslerfeld/" target="_blank">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
     </a>
   </div>
   <p style="margin-bottom:.5rem;"><strong>Netzwerk Unser Sisslerfeld</strong></p>
@@ -1709,30 +1644,13 @@ footer p{color:rgba(255,255,255,.5);}
     <a href="#" onclick="showPage('impressum');return false;">Impressum</a> &nbsp;·&nbsp;
     <a href="https://unser-sisslerfeld.ch" target="_blank">unser-sisslerfeld.ch</a>
   </p>
-  <p style="font-size:.73rem;color:rgba(255,255,255,.2);">© 2026 Netzwerk Unser Sisslerfeld</p>
+  <p style="font-size:.73rem;color:rgba(255,255,255,.4);">© 2026 Netzwerk Unser Sisslerfeld</p>
 </footer>
 
 
 <script>
-// Spinner CSS inject styling dynamically
-const spinnerStyle = document.createElement('style');
-spinnerStyle.textContent = `
-.loading-spinner {
-  display: inline-block;
-  width: 14px;
-  height: 14px;
-  border: 2px solid rgba(255,255,255,0.3);
-  border-radius: 50%;
-  border-top-color: #fff;
-  animation: spin 1s ease-in-out infinite;
-  margin-right: 8px;
-  vertical-align: middle;
-}
-@keyframes spin {
-  to { transform: rotate(360deg); }
-}
-`;
-document.head.appendChild(spinnerStyle);
+// ── FORMSPREE CONFIGURATION ──
+const FORMSPREE_ENDPOINT = "https://formspree.io/f/xykqzdbr";
 
 // ── PAGE ROUTER ──
 function showPage(id) {
@@ -1798,57 +1716,7 @@ function toggleOkCheckbox() {
   card.classList.toggle('selected');
 }
 
-// ── DIRECT FORM SUBMISSIONS (SIMULATED VIA MODERN Loader) ──
-function submitMembershipForm() {
-  const vorname = document.getElementById('m-vorname').value.trim();
-  const nachname = document.getElementById('m-nachname').value.trim();
-  const email = document.getElementById('m-email').value.trim();
-  const gemeinde = document.getElementById('m-gemeinde').value.trim();
-  const typSelect = document.getElementById('m-typ');
-  const typ = typSelect.options[typSelect.selectedIndex].text;
-  const okCardVisible = document.getElementById('okCheckboxCard').style.display !== 'none';
-  const okCardSelected = document.getElementById('okCheckboxCard').classList.contains('selected');
-  const okInteresse = okCardVisible && okCardSelected ? "Ja, grosses Interesse am OK vorhanden" : "Nein";
-  const nachricht = document.getElementById('m-nachricht').value.trim();
-  const errorDiv = document.getElementById('m-validation-error');
-  const successDiv = document.getElementById('ms');
-  const submitBtn = document.querySelector('#page-mitglied button.btn-red');
-
-  if (!vorname || !nachname || !email) {
-    errorDiv.style.display = 'block';
-    setTimeout(() => errorDiv.style.display = 'none', 6000);
-    return;
-  }
-  errorDiv.style.display = 'none';
-
-  // Displaying interactive loader in the button
-  const originalText = submitMembershipFormText(submitMembershipForm);
-  submitMembershipForm.originalBtnText = submitMembershipForm.originalText || submitFormTextValue(originalText, btnElementSelector('#page-mitglied .btn-red'));
-  
-  const btnEl = document.querySelector('#page-mitglied .btn-red');
-  btnEl.disabled = true;
-  btnocText = btnEl.innerHTML;
-  btnEl.innerHTML = '<span class="spinner"></span> Wird gesendet...';
-
-  // Simulate modern AJAX dispatch directly to info@netzwerksisslerfeld.ch backend simulation
-  setTimeout(() => {
-    btnEl.disabled = false;
-    btn.innerHTML = btnOriginalText;
-    
-    // Show beautiful custom notification
-    submitForm('ms');
-
-    // Clear the form fields elegantly
-    document.getElementById('m-vorname').value = '';
-    document.getElementById('m-nachname').value = '';
-    document.getElementById('m-email').value = '';
-    document.getElementById('m-gemeinde').value = '';
-    document.getElementById('m-nachricht').value = '';
-    document.getElementById('okCheckboxCard').classList.remove('selected');
-  }, 1600);
-}
-
-// Helper to keep track of button texts across AJAX simulations
+// ── DIRECT FORMSPREE SUBMISSIONS VIA FETCH AJAX ──
 var originalMembershipBtnText = "Anmeldung absenden";
 function submitMembershipForm() {
   const vorname = document.getElementById('m-vorname').value.trim();
@@ -1875,22 +1743,48 @@ function submitMembershipForm() {
   btnEl.disabled = true;
   btnEl.innerHTML = '<span class="loading-spinner"></span> Wird gesendet...';
 
-  setTimeout(() => {
+  // Sende Daten direkt via Formspree API im Hintergrund ab
+  fetch(FORMSPREE_ENDPOINT, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'Accept': 'application/json'
+    },
+    body: JSON.stringify({
+      Formular: "Mitgliedschafts-Anfrage",
+      Vorname: vorname,
+      Nachname: nachname,
+      Email: email,
+      Gemeinde: gemeinde,
+      MitgliedschaftsArt: typ,
+      InteresseAmOK: okInteresse,
+      Nachricht: nachricht
+    })
+  })
+  .then(response => {
     btnEl.disabled = false;
     btnEl.innerHTML = originalMembershipBtnText;
     
-    // Display direct success toast
-    successDiv.style.display = 'block';
-    setTimeout(() => successDiv.style.display = 'none', 8000);
+    if (response.ok) {
+      successDiv.style.display = 'block';
+      setTimeout(() => successDiv.style.display = 'none', 8000);
 
-    // Elegant clean up
-    document.getElementById('m-vorname').value = '';
-    document.getElementById('m-nachname').value = '';
-    document.getElementById('m-email').value = '';
-    document.getElementById('m-gemeinde').value = '';
-    document.getElementById('m-nachricht').value = '';
-    document.getElementById('okCheckboxCard').classList.remove('selected');
-  }, 1500);
+      // Formular zurücksetzen
+      document.getElementById('m-vorname').value = '';
+      document.getElementById('m-nachname').value = '';
+      document.getElementById('m-email').value = '';
+      document.getElementById('m-gemeinde').value = '';
+      document.getElementById('m-nachricht').value = '';
+      document.getElementById('okCheckboxCard').classList.remove('selected');
+    } else {
+      alert('Fehler beim Absenden. Bitte versuchen Sie es später noch einmal.');
+    }
+  })
+  .catch(error => {
+    btnEl.disabled = false;
+    btnEl.innerHTML = originalMembershipBtnText;
+    alert('Netzwerkfehler. Bitte überprüfen Sie Ihre Internetverbindung.');
+  });
 }
 
 var originalContactBtnText = "Absenden";
@@ -1914,26 +1808,44 @@ function submitContactForm() {
   btnEl.disabled = true;
   btnEl.innerHTML = '<span class="loading-spinner"></span> Wird gesendet...';
 
-  setTimeout(() => {
+  // Sende Daten direkt via Formspree API im Hintergrund ab
+  fetch(FORMSPREE_ENDPOINT, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'Accept': 'application/json'
+    },
+    body: JSON.stringify({
+      Formular: "Allgemeine Kontaktanfrage",
+      Name: vorname + " " + nachname,
+      Email: email,
+      Betreff: betreff ? betreff : "Kein Betreff angegeben",
+      Nachricht: nachricht
+    })
+  })
+  .then(response => {
     btnEl.disabled = false;
     btnEl.innerHTML = originalContactBtnText;
     
-    // Display direct success toast
-    successDiv.style.display = 'block';
-    setTimeout(() => successDiv.style.display = 'none', 8000);
+    if (response.ok) {
+      successDiv.style.display = 'block';
+      setTimeout(() => successDiv.style.display = 'none', 8000);
 
-    // Elegant clean up
-    document.getElementById('k-vorname').value = '';
-    document.getElementById('k-nachname').value = '';
-    document.getElementById('k-email').value = '';
-    document.getElementById('k-betreff').value = '';
-    document.getElementById('k-nachricht').value = '';
-  }, 1500);
-}
-
-function submitForm(id) {
-  const el = document.getElementById(id);
-  if (el) { el.style.display = 'block'; setTimeout(() => el.style.display='none', 8000); }
+      // Formular zurücksetzen
+      document.getElementById('k-vorname').value = '';
+      document.getElementById('k-nachname').value = '';
+      document.getElementById('k-email').value = '';
+      document.getElementById('k-betreff').value = '';
+      document.getElementById('k-nachricht').value = '';
+    } else {
+      alert('Fehler beim Absenden. Bitte versuchen Sie es später noch einmal.');
+    }
+  })
+  .catch(error => {
+    btnEl.disabled = false;
+    btnEl.innerHTML = originalContactBtnText;
+    alert('Netzwerkfehler. Bitte überprüfen Sie Ihre Internetverbindung.');
+  });
 }
 </script>
 </body>
